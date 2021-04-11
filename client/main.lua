@@ -74,7 +74,7 @@ Citizen.CreateThread(function()
                             if CurrentCops >= Config.MinimumHouseRobberyPolice then
                                 if Config.Houses[k]["opened"] then
                                     DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], '~g~E~w~ - To Enter')
-                                    if IsControlJustPressed(0, Keys["E"]) then
+                                    if IsControlJustPressed(0, 38) then
                                         enterRobberyHouse(k)
                                     end
                                 else
@@ -115,7 +115,7 @@ Citizen.CreateThread(function()
         if inside then
             if #(pos - vector3(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
                 DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - To leave home')
-                if IsControlJustPressed(0, Keys["E"]) then
+                if IsControlJustPressed(0, 38) then
                     leaveRobberyHouse(currentHouse)
                 end
             end
@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
                         if not Config.Houses[currentHouse]["furniture"][k]["isBusy"] then
                             DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, '~g~E~w~ - '..Config.Houses[currentHouse]["furniture"][k]["text"])
                             if not IsLockpicking then
-                                if IsControlJustReleased(0, Keys["E"]) then
+                                if IsControlJustReleased(0, 38) then
                                     searchCabin(k)
                                 end
                             end
