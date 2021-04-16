@@ -162,7 +162,7 @@ function enterRobberyHouse(house)
     inside = true
     currentHouse = house
     Citizen.Wait(500)
-    SetRainFxIntensity(0.0)
+    SetRainLevel(0.0)
     TriggerEvent('qb-weathersync:client:DisableSync')
     Citizen.Wait(100)
     SetWeatherTypePersist('EXTRASUNNY')
