@@ -1,8 +1,3 @@
-QBCore = nil
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-
--- Code
-
 QBCore.Functions.CreateCallback('qb-houserobbery:server:GetHouseConfig', function(source, cb)
     cb(Config.Houses)
 end)

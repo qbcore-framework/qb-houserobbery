@@ -1,14 +1,3 @@
-QBCore = nil
-
-Citizen.CreateThread(function()
-	while QBCore == nil do
-		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-		Citizen.Wait(0)
-	end
-end)
-
--- Code
-
 local inside = false
 local currentHouse = nil
 local closestHouse
