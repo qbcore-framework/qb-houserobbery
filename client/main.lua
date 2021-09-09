@@ -1,20 +1,14 @@
 local inside = false
 local currentHouse = nil
 local closestHouse
-
 local inRange
-
 local lockpicking = false
-
 local houseObj = {}
 local POIOffsets = nil
 local usingAdvanced = false
-
 local requiredItemsShowed = false
-
 local requiredItems = {}
-
-CurrentCops = 0
+local CurrentCops = 0
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
