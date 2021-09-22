@@ -1,9 +1,7 @@
 Config = {}
 
 Config.MinZOffset = 45
-
 Config.MinimumHouseRobberyPolice = 0
-
 Config.MinimumTime = 22
 Config.MaximumTime = 5
 
@@ -38,12 +36,7 @@ Config.Rewards = {
 
 Config.Houses = {
     ["grovestreet1"] = { -- Moved 28-1-2020
-        ["coords"] = {
-            ["x"] = 500.75,
-            ["y"] = -1697.16,
-            ["z"] = 29.78,
-            ["h"] = 326.5,
-        },
+		["coords"] = vector4(500.75, -1697.16, 29.78, 326.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -105,12 +98,7 @@ Config.Houses = {
         }
     },
     ["geilhuisje"] = {
-        ["coords"] = {
-            ["x"] = 46.46,
-            ["y"] = -30.96,
-            ["z"] = 73.68,
-            ["h"] = 229.5,
-        },
+		["coords"] = vector4(46.46, -30.96, 73.68, 229.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -172,12 +160,7 @@ Config.Houses = {
         }
     },
     ["picperfectdrive"] = {
-        ["coords"] = {
-            ["x"] = -784.45,
-            ["y"] = 459.3,
-            ["z"] = 100.17,
-            ["h"] = 229.5,
-        },
+		["coords"] = vector4(-784.45, 459.3, 100.17, 229.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -239,12 +222,7 @@ Config.Houses = {
         }
     },
     ["needasniks"] = {
-        ["coords"] = {
-            ["x"] = -536.63,
-            ["y"] = 818.51,
-            ["z"] = 197.51,
-            ["h"] = 229.5,
-        },
+		["coords"] = vector4(-536.63, 818.51, 197.51, 229.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -306,12 +284,7 @@ Config.Houses = {
         }
     },
     ["12345"] = {
-        ["coords"] = {
-            ["x"] = 1229.64, 
-            ["y"] = -725.33, 
-            ["z"] = 60.95, 
-            ["h"] = 97.5
-        },
+		["coords"] = vector4(1229.64, -725.33, 60.95, 97.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -373,12 +346,7 @@ Config.Houses = {
         }
     },
     ["12sdgsd345"] = {
-        ["coords"] = {
-            ["x"] = 808.83, 
-            ["y"] = -163.65, 
-            ["z"] = 75.87, 
-            ["h"] = 331.5
-        },
+		["coords"] = vector4(808.83, -163.65, 75.87, 331.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -440,12 +408,7 @@ Config.Houses = {
         }
     },
     ["house1"] = {
-        ["coords"] = {
-            ["x"] = 5.76, 
-            ["y"] = -9.49, 
-            ["z"] = 70.3, 
-            ["h"] = 159.5
-        },
+		["coords"] = vector4(5.76, -9.49, 70.3, 159.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -507,12 +470,7 @@ Config.Houses = {
         }
     },
     ["house2"] = { -- Moved 28-1-20
-        ["coords"] = {
-            ["x"] = 1010.41, 
-            ["y"] = -423.39, 
-            ["z"] = 65.34, 
-            ["h"] = 133.5
-        },
+		["coords"] = vector4(1010.41, -423.39, 65.34, 133.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -574,12 +532,7 @@ Config.Houses = {
         }
     },
     ["house3"] = { -- Moved 28-1-2020
-        ["coords"] = {
-            ["x"] = -678.96, 
-            ["y"] = 512.12, 
-            ["z"] = 113.52, 
-            ["h"] = 18.5
-        },
+		["coords"] = vector4(-678.96, 512.12, 113.52, 18.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -641,12 +594,7 @@ Config.Houses = {
         }
     },
     ["house4"] = {
-        ["coords"] = {
-            ["x"] = -1308.13, 
-            ["y"] = 448.89, 
-            ["z"] = 100.96, 
-            ["h"] = 172.5
-        },
+		["coords"] = vector4(-1308.13, 448.89, 100.96, 172.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -708,12 +656,7 @@ Config.Houses = {
         }
     },
     ["house5"] = {
-        ["coords"] = {
-            ["x"] = -1413.59, 
-            ["y"] = 462.1, 
-            ["z"] = 109.2, 
-            ["h"] = 164.5
-        },
+		["coords"] = vector4(-1413.59, 462.1, 109.2, 164.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -775,12 +718,7 @@ Config.Houses = {
         }
     },
     ["house6"] = {
-        ["coords"] = {
-            ["x"] = -2015.01, 
-            ["y"] = 499.84, 
-            ["z"] = 107.17, 
-            ["h"] = 85.5
-        },
+		["coords"] = vector4(-2015.01, 499.84, 107.17, 85.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -842,12 +780,7 @@ Config.Houses = {
         }
     },
     ["house7"] = {
-        ["coords"] = {
-            ["x"] = 329.37, 
-            ["y"] = -1845.84, 
-            ["z"] = 27.74, 
-            ["h"] = 236.5
-        },
+		["coords"] = vector4(329.37, -1845.84, 27.74, 236.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -909,12 +842,7 @@ Config.Houses = {
         }
     },
     ["house8"] = {
-        ["coords"] = {
-            ["x"] = 489.64, 
-            ["y"] = -1714.1, 
-            ["z"] = 29.7, 
-            ["h"] = 49.5
-        },
+		["coords"] = vector4(489.64, -1714.1, 29.7, 49.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -976,12 +904,7 @@ Config.Houses = {
         }
     },
     ["house9"] = {
-        ["coords"] = {
-            ["x"] = 1312.14, 
-            ["y"] = -1697.35, 
-            ["z"] = 58.22, 
-            ["h"] = 11.5
-        },
+		["coords"] = vector4(1312.14, -1697.35, 58.22, 11.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1043,12 +966,7 @@ Config.Houses = {
         }
     },
     ["house10"] = {
-        ["coords"] = {
-            ["x"] = 1379.2, 
-            ["y"] = -1514.89, 
-            ["z"] = 58.43, 
-            ["h"] = 30.5
-        },
+		["coords"] = vector4(1379.2, -1514.89, 58.43, 30.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1110,12 +1028,7 @@ Config.Houses = {
         }
     },
     ["house11"] = {
-        ["coords"] = {
-            ["x"] = -246.14, 
-            ["y"] = 6414.11, 
-            ["z"] = 31.46, 
-            ["h"] = 310.5
-        },
+		["coords"] = vector4(-246.14, 6414.11, 31.46, 310.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1177,12 +1090,7 @@ Config.Houses = {
         }
     },
     ["house12"] = {
-        ["coords"] = {
-            ["x"] = -407.22, 
-            ["y"] = 6313.92, 
-            ["z"] = 28.94, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(-407.22, 6313.92, 28.94, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1244,12 +1152,7 @@ Config.Houses = {
         }
     },    
     ["sandyhouse1"] = {
-        ["coords"] = {
-            ["x"] = 1857.66, 
-            ["y"] = 3854.69, 
-            ["z"] = 33.10231, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(1857.66, 3854.69, 33.10231, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1311,12 +1214,7 @@ Config.Houses = {
         }
     },
     ["sandyhouse2"] = {
-        ["coords"] = {
-            ["x"] = 1435.43, 
-            ["y"] = 3657.10, 
-            ["z"] = 34.40128, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(1435.43, 3657.10, 34.40128, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1378,12 +1276,7 @@ Config.Houses = {
         }
     },
     ["sandyhouse3"] = {
-        ["coords"] = {
-            ["x"] = 1733.61, 
-            ["y"] = 3895.35, 
-            ["z"] = 35.55904, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(1733.61, 3895.35, 35.55904 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1445,12 +1338,7 @@ Config.Houses = {
         }
     },
     ["grapeseed1"] = {
-        ["coords"] = {
-            ["x"] = 1725.4, 
-            ["y"] = 4642.52, 
-            ["z"] = 43.87549, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(1725.4, 4642.52, 43.87549, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1512,12 +1400,7 @@ Config.Houses = {
         }
     }, 
     ["grapeseed2"] = {
-        ["coords"] = {
-            ["x"] = 2016.98, 
-            ["y"] = 4987.78, 
-            ["z"] = 42.09826, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(2016.98, 4987.78, 42.09826, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1579,12 +1462,7 @@ Config.Houses = {
         }
     },
     ["paletohouse1"] = {
-        ["coords"] = {
-            ["x"] = 31.225, 
-            ["y"] = 6596.86, 
-            ["z"] = 32.82224, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(31.225, 6596.86, 32.82224, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1646,12 +1524,7 @@ Config.Houses = {
         }
     },
     ["paletohouse2"] = {
-        ["coords"] = {
-            ["x"] = -130.78, 
-            ["y"] = 6551.86, 
-            ["z"] = 29.87277, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(-130.78, 6551.86, 29.87277, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1713,12 +1586,7 @@ Config.Houses = {
         }
     },
     ["paletohouse3"] = {
-        ["coords"] = {
-            ["x"] = -227.246, 
-            ["y"] = 6377.25, 
-            ["z"] = 31.75931, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(-227.246, 6377.25, 31.75931, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1780,12 +1648,7 @@ Config.Houses = {
         }
     },
     ["paletohouse4"] = {
-        ["coords"] = {
-            ["x"] = -366.56, 
-            ["y"] = 6214.13, 
-            ["z"] = 31.84225, 
-            ["h"] = 41.5,
-        },
+		["coords"] = vector4(-366.56, 6214.13, 31.84225, 41.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
@@ -1849,83 +1712,9 @@ Config.Houses = {
 }
 
 Config.MaleNoHandshoes = {
-    [0] = true,
-    [1] = true,
-    [2] = true,
-    [3] = true,
-    [4] = true,
-    [5] = true,
-    [6] = true,
-    [7] = true,
-    [8] = true,
-    [9] = true,
-    [10] = true,
-    [11] = true,
-    [12] = true,
-    [13] = true,
-    [14] = true,
-    [15] = true,
-    [16] = true,
-    [18] = true,
-    [26] = true,
-    [52] = true,
-    [53] = true,
-    [54] = true,
-    [55] = true,
-    [56] = true,
-    [57] = true,
-    [58] = true,
-    [59] = true,
-    [60] = true,
-    [61] = true,
-    [62] = true,
-    [112] = true,
-    [113] = true,
-    [114] = true,
-    [118] = true,
-    [125] = true,
-    [132] = true,
+    [0] = true, [1] = true, [2] = true, [3] = true, [4] = true, [5] = true, [6] = true, [7] = true, [8] = true, [9] = true, [10] = true, [11] = true, [12] = true, [13] = true, [14] = true, [15] = true, [16] = true, [18] = true, [26] = true, [52] = true, [53] = true, [54] = true, [55] = true, [56] = true, [57] = true, [58] = true, [59] = true, [60] = true, [61] = true, [62] = true, [112] = true, [113] = true, [114] = true, [118] = true, [125] = true, [132] = true,
 }
 
 Config.FemaleNoHandshoes = {
-    [0] = true,
-    [1] = true,
-    [2] = true,
-    [3] = true,
-    [4] = true,
-    [5] = true,
-    [6] = true,
-    [7] = true,
-    [8] = true,
-    [9] = true,
-    [10] = true,
-    [11] = true,
-    [12] = true,
-    [13] = true,
-    [14] = true,
-    [15] = true,
-    [19] = true,
-    [59] = true,
-    [60] = true,
-    [61] = true,
-    [62] = true,
-    [63] = true,
-    [64] = true,
-    [65] = true,
-    [66] = true,
-    [67] = true,
-    [68] = true,
-    [69] = true,
-    [70] = true,
-    [71] = true,
-    [129] = true,
-    [130] = true,
-    [131] = true,
-    [135] = true,
-    [142] = true,
-    [149] = true,
-    [153] = true,
-    [157] = true,
-    [161] = true,
-    [165] = true,
+    [0] = true, [1] = true, [2] = true, [3] = true, [4] = true, [5] = true, [6] = true, [7] = true, [8] = true, [9] = true, [10] = true, [11] = true, [12] = true, [13] = true, [14] = true, [15] = true, [19] = true, [59] = true, [60] = true, [61] = true, [62] = true, [63] = true, [64] = true, [65] = true, [66] = true, [67] = true, [68] = true, [69] = true, [70] = true, [71] = true, [129] = true, [130] = true, [131] = true, [135] = true, [142] = true, [149] = true, [153] = true, [157] = true, [161] = true, [165] = true,
 }
