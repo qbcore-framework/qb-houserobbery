@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local inside = false
 local currentHouse = nil
 local closestHouse
