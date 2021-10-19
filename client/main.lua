@@ -34,8 +34,8 @@ function DrawText3Ds(x, y, z, text)
     ClearDrawOrigin()
 end
 
-Citizen.CreateThread(function()
-    Citizen.Wait(500)
+CreateThread(function()
+    Wait(500)
     requiredItems = {
         [1] = {name = QBCore.Shared.Items["lockpick"]["name"], image = QBCore.Shared.Items["lockpick"]["image"]},
         [2] = {name = QBCore.Shared.Items["screwdriverset"]["name"], image = QBCore.Shared.Items["screwdriverset"]["image"]},
@@ -45,7 +45,6 @@ Citizen.CreateThread(function()
         local PlayerPed = PlayerPedId()
         local PlayerPos = GetEntityCoords(PlayerPed)
         closestHouse = nil
-
         if QBCore ~= nil then
             local hours = GetClockHours()
             if hours >= Config.MinimumTime or hours <= Config.MaximumTime then
@@ -55,7 +54,6 @@ Citizen.CreateThread(function()
                         if dist <= 1.5 then
                             closestHouse = k
                             inRange = true
-                            
                             if CurrentCops >= Config.MinimumHouseRobberyPolice then
                                 if Config.Houses[k]["opened"] then
                                     DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], '~g~E~w~ - To Enter')
@@ -73,25 +71,20 @@ Citizen.CreateThread(function()
                     end
                 end
             end
-
-            if inside then
-                Citizen.Wait(1000)
-            end
-
+            if inside then Wait(1000) end
             if not inRange then
                 if requiredItemsShowed then
                     requiredItemsShowed = false
                     TriggerEvent('inventory:client:requiredItems', requiredItems, false)
                 end
-                Citizen.Wait(1000)
+                Wait(1000)
             end
         end
-
-        Citizen.Wait(5)
+        Wait(5)
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
 
         local ped = PlayerPedId()
@@ -126,27 +119,27 @@ Citizen.CreateThread(function()
         end
 
         if not inside then 
-            Citizen.Wait(5000)
+            Wait(5000)
         end
 
-        Citizen.Wait(3)
+        Wait(3)
     end
 end)
 
 function enterRobberyHouse(house)
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_open", 0.25)
     openHouseAnim()
-    Citizen.Wait(250)
+    Wait(250)
     local coords = { x = Config.Houses[house]["coords"]["x"], y = Config.Houses[house]["coords"]["y"], z= Config.Houses[house]["coords"]["z"] - Config.MinZOffset}
     if Config.Houses[house]["tier"] == 1 then
-        data = exports['qb-interior']:CreateTier1HouseFurnished(coords)
+        data = exports['qb-interior']:CreateHouseRobbery(coords)
     end
-    Citizen.Wait(100)
+    Wait(100)
     houseObj = data[1]
     POIOffsets = data[2]
     inside = true
     currentHouse = house
-    Citizen.Wait(500)
+    Wait(500)
     TriggerEvent('qb-weathersync:client:DisableSync')
 end
 
@@ -154,12 +147,12 @@ function leaveRobberyHouse(house)
     local ped = PlayerPedId()
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_open", 0.25)
     openHouseAnim()
-    Citizen.Wait(250)
+    Wait(250)
     DoScreenFadeOut(250)
-    Citizen.Wait(500)
+    Wait(500)
     exports['qb-interior']:DespawnInterior(houseObj, function()
         TriggerEvent('qb-weathersync:client:EnableSync')
-        Citizen.Wait(250)
+        Wait(250)
         DoScreenFadeIn(250)
         SetEntityCoords(ped, Config.Houses[house]["coords"]["x"], Config.Houses[house]["coords"]["y"], Config.Houses[house]["coords"]["z"] + 0.5)
         SetEntityHeading(ped, Config.Houses[house]["coords"]["h"])
@@ -189,14 +182,14 @@ end)
 function openHouseAnim()
     loadAnimDict("anim@heists@keycard@") 
     TaskPlayAnim( PlayerPedId(), "anim@heists@keycard@", "exit", 5.0, 1.0, -1, 16, 0, 0, 0, 0 )
-    Citizen.Wait(400)
+    Wait(400)
     ClearPedTasks(PlayerPedId())
 end
 
 function loadAnimDict(dict)
     while (not HasAnimDictLoaded(dict)) do
         RequestAnimDict(dict)
-        Citizen.Wait(5)
+        Wait(5)
     end
 end
 
@@ -260,7 +253,7 @@ function PoliceCall()
     if math.random(1, 100) <= chance then
         local closestPed = GetNearbyPed()
         if closestPed ~= nil then
-            local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
+            local s1, s2 = InvokeNative(0x2EB41072B4C1E4C0, pos.x, pos.y, pos.z, PointerValueInt(), PointerValueInt())
             local streetLabel = GetStreetNameFromHashKey(s1)
             local street2 = GetStreetNameFromHashKey(s2)
             if street2 ~= nil and street2 ~= "" then 
@@ -360,7 +353,7 @@ function searchCabin(cabin)
             end)
         else
             -- Repeat
-            Skillbar.Repeat({ 
+            Skillbar.Repeat({
                 duration = math.random(700, 1250),
                 pos = math.random(10, 40),
                 width = math.random(10, 13),
@@ -386,7 +379,7 @@ function LockpickDoorAnim(time)
     -- loadAnimDict("veh@break_in@0h@p_m_one@")
     -- TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds" ,3.0, 3.0, -1, 16, 0, false, false, false)
     openingDoor = true
-    Citizen.CreateThread(function()
+    CreateThread(function()
         while true do
             if openingDoor then
                 TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
@@ -394,7 +387,7 @@ function LockpickDoorAnim(time)
                 StopAnimTask(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 1.0)
                 break
             end
-            Citizen.Wait(1000)
+            Wait(1000)
         end
     end)
 end
@@ -424,3 +417,20 @@ function IsWearingHandshoes()
     end
     return retval
 end
+
+RegisterCommand('gethroffset', function()
+    local coords = GetEntityCoords(PlayerPedId())
+    local houseCoords = vector3(
+        Config.Houses[currentHouse]["coords"]["x"],
+        Config.Houses[currentHouse]["coords"]["y"],
+        Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset
+    )
+    if inside then
+        local xdist = coords.x - houseCoords.x
+        local ydist = coords.y - houseCoords.y
+        local zdist = coords.z - houseCoords.z
+        print('X: '..xdist)
+        print('Y: '..ydist)
+        print('Z: '..zdist)
+    end
+end)
