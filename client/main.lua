@@ -1,5 +1,4 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-
 local inside = false
 local currentHouse = nil
 local closestHouse
@@ -12,8 +11,7 @@ local requiredItemsShowed = false
 local requiredItems = {}
 local CurrentCops = 0
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.TriggerCallback('qb-houserobbery:server:GetHouseConfig', function(HouseConfig)
         Config.Houses = HouseConfig
     end)
@@ -86,7 +84,6 @@ end)
 
 CreateThread(function()
     while true do
-
         local ped = PlayerPedId()
         local pos = GetEntityCoords(ped)
 
@@ -121,7 +118,6 @@ CreateThread(function()
         if not inside then 
             Wait(5000)
         end
-
         Wait(3)
     end
 end)
@@ -161,21 +157,18 @@ function leaveRobberyHouse(house)
     end)
 end
 
-RegisterNetEvent('qb-houserobbery:client:ResetHouseState')
-AddEventHandler('qb-houserobbery:client:ResetHouseState', function(house)
+RegisterNetEvent('qb-houserobbery:client:ResetHouseState', function(house)
     Config.Houses[house]["opened"] = false
     for k, v in pairs(Config.Houses[house]["furniture"]) do
         v["searched"] = false
     end
 end)
 
-RegisterNetEvent('police:SetCopCount')
-AddEventHandler('police:SetCopCount', function(amount)
+RegisterNetEvent('police:SetCopCount', function(amount)
     CurrentCops = amount
 end)
 
-RegisterNetEvent('qb-houserobbery:client:enterHouse')
-AddEventHandler('qb-houserobbery:client:enterHouse', function(house)
+RegisterNetEvent('qb-houserobbery:client:enterHouse', function(house)
     enterRobberyHouse(house)
 end)
 
@@ -193,10 +186,7 @@ function loadAnimDict(dict)
     end
 end
 
-
-
-RegisterNetEvent('lockpicks:UseLockpick')
-AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
+RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
     local hours = GetClockHours()
     if hours >= Config.MinimumTime or hours <= Config.MaximumTime then
         usingAdvanced = isAdvanced
@@ -253,7 +243,7 @@ function PoliceCall()
     if math.random(1, 100) <= chance then
         local closestPed = GetNearbyPed()
         if closestPed ~= nil then
-            local s1, s2 = InvokeNative(0x2EB41072B4C1E4C0, pos.x, pos.y, pos.z, PointerValueInt(), PointerValueInt())
+            local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
             local streetLabel = GetStreetNameFromHashKey(s1)
             local street2 = GetStreetNameFromHashKey(s2)
             if street2 ~= nil and street2 ~= "" then 
@@ -268,8 +258,6 @@ function PoliceCall()
         end
     end
 end
-
-
 
 function GetNearbyPed()
 	local retval = nil
@@ -310,8 +298,7 @@ function lockpickFinish(success)
     end
 end
 
-RegisterNetEvent('qb-houserobbery:client:setHouseState')
-AddEventHandler('qb-houserobbery:client:setHouseState', function(house, state)
+RegisterNetEvent('qb-houserobbery:client:setHouseState', function(house, state)
     Config.Houses[house]["opened"] = state
 end)
 
@@ -392,13 +379,11 @@ function LockpickDoorAnim(time)
     end)
 end
 
-RegisterNetEvent('qb-houserobbery:client:setCabinState')
-AddEventHandler('qb-houserobbery:client:setCabinState', function(house, cabin, state)
+RegisterNetEvent('qb-houserobbery:client:setCabinState', function(house, cabin, state)
     Config.Houses[house]["furniture"][cabin]["searched"] = state
 end)
 
-RegisterNetEvent('qb-houserobbery:client:SetBusyState')
-AddEventHandler('qb-houserobbery:client:SetBusyState', function(cabin, house, bool)
+RegisterNetEvent('qb-houserobbery:client:SetBusyState', function(cabin, house, bool)
     Config.Houses[house]["furniture"][cabin]["isBusy"] = bool
 end)
 
