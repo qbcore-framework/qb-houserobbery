@@ -115,7 +115,7 @@ CreateThread(function()
             end
         end
 
-        if not inside then 
+        if not inside then
             Wait(5000)
         end
         Wait(3)
@@ -173,7 +173,7 @@ RegisterNetEvent('qb-houserobbery:client:enterHouse', function(house)
 end)
 
 function openHouseAnim()
-    loadAnimDict("anim@heists@keycard@") 
+    loadAnimDict("anim@heists@keycard@")
     TaskPlayAnim( PlayerPedId(), "anim@heists@keycard@", "exit", 5.0, 1.0, -1, 16, 0, 0, 0, 0 )
     Wait(400)
     ClearPedTasks(PlayerPedId())
@@ -246,7 +246,7 @@ function PoliceCall()
             local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
             local streetLabel = GetStreetNameFromHashKey(s1)
             local street2 = GetStreetNameFromHashKey(s2)
-            if street2 ~= nil and street2 ~= "" then 
+            if street2 ~= nil and street2 ~= "" then
                 streetLabel = streetLabel .. " " .. street2
             end
             local gender = "Man"
@@ -264,7 +264,7 @@ function GetNearbyPed()
 	local PlayerPeds = {}
     for _, player in ipairs(GetActivePlayers()) do
         local ped = GetPlayerPed(player)
-        table.insert(PlayerPeds, ped)
+        PlayerPeds[#PlayerPeds+1] = ped
     end
     local player = PlayerPedId()
     local coords = GetEntityCoords(player)
@@ -293,7 +293,7 @@ function lockpickFinish(success)
                 TriggerEvent('inventory:client:ItemBox', itemInfo, "remove")
             end
         end
-        
+
         QBCore.Functions.Notify('It did not work..', 'error', 2500)
     end
 end
