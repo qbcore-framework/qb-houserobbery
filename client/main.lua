@@ -314,7 +314,7 @@ function searchCabin(cabin)
         local pos = GetEntityCoords(PlayerPedId())
         TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
     end
-    LockpickDoorAnim(lockpickTime)
+    LockpickDoorAnim()
     TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, true)
 
     FreezeEntityPosition(ped, true)
@@ -361,7 +361,7 @@ function searchCabin(cabin)
     end)
 end
 
-function LockpickDoorAnim(time)
+function LockpickDoorAnim()
     -- time = time / 1000
     -- loadAnimDict("veh@break_in@0h@p_m_one@")
     -- TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds" ,3.0, 3.0, -1, 16, 0, false, false, false)
