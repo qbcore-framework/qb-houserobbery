@@ -243,7 +243,7 @@ function PoliceCall()
     if math.random(1, 100) <= chance then
         local closestPed = GetNearbyPed()
         if closestPed ~= nil then
-            local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
+			local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z)
             local streetLabel = GetStreetNameFromHashKey(s1)
             local street2 = GetStreetNameFromHashKey(s2)
             if street2 ~= nil and street2 ~= "" then
