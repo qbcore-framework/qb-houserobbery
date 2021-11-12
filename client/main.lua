@@ -128,6 +128,22 @@ local function LockpickDoorAnim()
     end)
 end
 
+local function IsWearingHandshoes()
+    local armIndex = GetPedDrawableVariation(PlayerPedId(), 3)
+    local model = GetEntityModel(PlayerPedId())
+    local retval = true
+    if model == `mp_m_freemode_01` then
+        if Config.MaleNoHandshoes[armIndex] ~= nil and Config.MaleNoHandshoes[armIndex] then
+            retval = false
+        end
+    else
+        if Config.FemaleNoHandshoes[armIndex] ~= nil and Config.FemaleNoHandshoes[armIndex] then
+            retval = false
+        end
+    end
+    return retval
+end
+
 local function searchCabin(cabin)
     local ped = PlayerPedId()
     local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
@@ -174,22 +190,6 @@ local function searchCabin(cabin)
             IsLockpicking = false
         end)
     end)
-end
-
-local function IsWearingHandshoes()
-    local armIndex = GetPedDrawableVariation(PlayerPedId(), 3)
-    local model = GetEntityModel(PlayerPedId())
-    local retval = true
-    if model == `mp_m_freemode_01` then
-        if Config.MaleNoHandshoes[armIndex] ~= nil and Config.MaleNoHandshoes[armIndex] then
-            retval = false
-        end
-    else
-        if Config.FemaleNoHandshoes[armIndex] ~= nil and Config.FemaleNoHandshoes[armIndex] then
-            retval = false
-        end
-    end
-    return retval
 end
 
 -- Events
