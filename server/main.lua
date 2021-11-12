@@ -74,7 +74,7 @@ RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
                     Player.Functions.AddItem(randomItem, 1)
                     TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
             else
-                if not itemInfo["unqiue"] then
+                if not itemInfo["unique"] then
                     local itemAmount = math.random(1, 3)
                     if randomItem == "plastic" then
                         itemAmount = math.random(15, 30)
