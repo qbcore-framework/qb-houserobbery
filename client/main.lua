@@ -93,7 +93,7 @@ end
 local function lockpickFinish(success)
     if success then
         TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
-        QBCore.Functions.Notify('It worked!', 'success', 2500)
+        QBCore.Functions.Notify(Lang:t("success.worked"), "success", 2500)
     else
         if usingAdvanced then
             local itemInfo = QBCore.Shared.Items["advancedlockpick"]
@@ -109,7 +109,8 @@ local function lockpickFinish(success)
             end
         end
 
-        QBCore.Functions.Notify('It did not work..', 'error', 2500)
+
+        QBCore.Functions.Notify(Lang:t("error.didnt_work"), "error", 2500)
     end
 end
 
@@ -183,7 +184,7 @@ local function searchCabin(cabin)
         openingDoor = false
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
-        QBCore.Functions.Notify("Process Canceled..", "error")
+        QBCore.Functions.Notify(Lang:t("error.process_cancelled"), "error", 3500)
         SucceededAttempts = 0
         FreezeEntityPosition(ped, false)
         SetTimeout(500, function()
@@ -242,10 +243,10 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                             TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
                         end
                     else
-                        QBCore.Functions.Notify('The door is already open..', 'error', 3500)
+                        QBCore.Functions.Notify(Lang:t("error.door_open"), "error", 3500)
                     end
                 else
-                    QBCore.Functions.Notify('Not enough Police..', 'error', 3500)
+                    QBCore.Functions.Notify(Lang:t("error.not_enough_police"), "error", 3500)
                 end
             end
         else
@@ -261,13 +262,13 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                                     TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
                                 end
                             else
-                                QBCore.Functions.Notify('The door is already open..', 'error', 3500)
+                                QBCore.Functions.Notify(Lang:t("error.door_open"), "error", 3500)
                             end
                         else
-                            QBCore.Functions.Notify('Not enough Police..', 'error', 3500)
+                            QBCore.Functions.Notify(Lang:t("error.not_enough_police"), "error", 3500)
                         end
                     else
-                        QBCore.Functions.Notify('It looks like you are missing something...', 'error', 3500)
+                        QBCore.Functions.Notify(Lang:t("error.missing_something"), "error", 3500)
                     end
                 end
             end, "screwdriverset")
