@@ -11,4 +11,6 @@ local Translations = {
         ["worked"] = "It worked!",
     }
 }
-Lang = Locale:new({phrases = Translations})
+Lang = Locale:new({
+phrases = Translations,
+warnOnMissing = true})
