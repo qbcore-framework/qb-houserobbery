@@ -98,7 +98,7 @@ RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
             -- local weaponChance = math.random(1, 100)
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, 'The box is empty', 'error', 3500)
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.emty_box"), 'error')
     end
 
     Config.Houses[house]["furniture"][cabin]["searched"] = true
