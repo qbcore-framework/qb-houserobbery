@@ -2,15 +2,24 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'QB-HouseRobbery'
-version '1.0.0'
+version '2.0.0'
+
+ui_page 'html/index.html'
+file 'html/index.html'
 
 shared_scripts {
- 'config.lua',
- '@qb-core/shared/locale.lua',
- 'locales/en.lua'
-
+	'config.lua',
+	'@qb-core/shared/locale.lua',
+	'locales/en.lua'
 }
-client_script 'client/main.lua'
-server_script 'server/main.lua'
-
-lua54 'yes'
+client_scripts {
+	'client/*.lua',
+}
+server_scripts {
+	'server/*.lua',
+}
+dependencies {
+	'qb-core',
+	'qb-interior',
+	'qb-weathersync'
+}
