@@ -66,7 +66,7 @@ function enterRobberyHouse(house)
     Wait(250)
     local coords = { x = Config.Houses[house].coords.x, y = Config.Houses[house].coords.y, z= Config.Houses[house].coords.z - Config.MinZOffset}
     if Config.Houses[house]["tier"] == 1 then
-        data = exports['qb-interior']:CreateTier1HouseFurnished(coords)
+        data = exports['qb-interior']:CreateHouseRobbery(coords)
     elseif Config.Houses[house]["tier"] == 2 then
         data = exports['qb-interior']:HouseRobTierTwo(coords)
     end
