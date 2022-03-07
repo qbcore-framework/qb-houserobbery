@@ -311,7 +311,7 @@ end)
 CreateThread(function() -- House Robbery Cabinets
     for currentHouse, _ in pairs(Config.Houses) do
         for k,v in pairs(Config.Houses[currentHouse]['furniture']) do
-            exports['qb-target']:AddBoxZone('HouseCabinet'..math.random(1,2000), vector3(Config.Houses[currentHouse]['furniture'][k]['coords'].x, Config.Houses[currentHouse]['furniture'][k]['coords'].y, Config.Houses[currentHouse]['furniture'][k]['coords'].z), 1.50, 2.00, {
+            exports['qb-target']:AddBoxZone('HouseCabinet'..math.random(1,2000), vector3(Config.Houses[currentHouse]['furniture'][k]['coords'].x, Config.Houses[currentHouse]['furniture'][k]['coords'].y, Config.Houses[currentHouse]['furniture'][k]['coords'].z), Config.Houses[currentHouse]['furniture'][k]['boxx'], Config.Houses[currentHouse]['furniture'][k]['boxy'], {
                 name = 'HouseCabinet'..math.random(1,2000), 
                 heading = Config.Houses[currentHouse]['furniture'][k]['heading'],
                 debugPoly = Config.DebugPoly,
@@ -323,7 +323,7 @@ CreateThread(function() -- House Robbery Cabinets
                         type = 'client',
                         event = 'houserobbery:cabinet',
                         icon = 'fas fa-magnifying-glass',
-                        label = 'Search Cabinet',
+                        label = Config.Houses[currentHouse]['furniture'][k]['text'],
                     }
                 },
                 distance = 1.5,
@@ -346,7 +346,7 @@ CreateThread(function() -- House Robbery Props
                         type = 'client',
                         event = 'houserobbery:takeprop',
                         icon = 'fas fa-box',
-                        label = 'Grab Object',
+                        label = Config.Houses[currentHouse]['propitem'][k]['text'],
                     }
                 },
                 distance = 1.5,

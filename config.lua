@@ -83,38 +83,53 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(503.51, -1701.47, -12.92),
+                ["coords"] = vector3(505.03, -1702.98, -14.16),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.0,
+                ["boxy"] = 1.0,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(497.24, -1703.70, -12.92),
+                ["coords"] = vector3(501.15, -1695.96, -14.16),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.6,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(506.64, -1694.58, -12.92),
+                ["coords"] = vector3(497.73, -1698.41, -13.56),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.6,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(510.51, -1698.51, -12.92),
+                ["coords"] = vector3(508.23, -1693.17, -14.16),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.4,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(501.79, -1703.8, -12.92),
+                ["coords"] = vector3(501.59, -1689.38, -14.16),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search night stand"
+                ["boxx"] = 3.0,
+                ["boxy"] = 0.7,
+                ["text"] = "Search cabin"
             },
         },
 		['propitem'] = {
@@ -123,11 +138,11 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "television",
               ["PropName"] = "Prop_TV_Flat_01",
-              ["coords"] = vector3(496.06, -1696.42, -12.92),
+              ["coords"] = vector3(493.01, -1690.98, -14.16),
               ["heading"] = 90.0,
               ["boxx"] = 1.50,
               ["boxy"] = 2.50,
-              ["text"] = "Take Object"
+              ["text"] = "Take the TV"
             },
         },
     },
@@ -138,37 +153,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(49.25, -35.30, 30.98),
+                ["coords"] = vector3(50.73, -36.65, 29.74),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(42.94, -37.44, 30.98),
+                ["coords"] = vector3(46.89, -29.74, 29.74),
+                ["heading"] = 359.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.6,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(52.35, -28.38, 30.98),
+                ["coords"] = vector3(43.47, -32.19, 30.24),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.60,
+                ["boxy"] = 1.15,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(56.21, -32.33, 30.98),
+                ["coords"] = vector3(53.94, -26.97, 29.74),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(47.48, -37.47, 30.98),
+                ["coords"] = vector3(49.97, -23.1, 29.74),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.80,
+                ["boxy"] = 0.80,
                 ["text"] = "Search night stand"
             },
         },
@@ -178,11 +208,11 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "microwave",
               ["PropName"] = "prop_micro_01",
-              ["coords"] = vector3(48.28615, -35.6276, 31.090),
-              ["heading"] = 90.0,
-              ["boxx"] = 0.75,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(46.06, -30.2, 29.74),
+              ["heading"] = 359.0,
+              ["boxx"] = 0.80,
+              ["boxy"] = 0.60,
+              ["text"] = "Take the Microwave"
             },
         },
     },
@@ -193,37 +223,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-781.69, 454.96, 57.57),
+                ["coords"] = vector3(-780.17, 453.66, 56.23),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.6,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-787.97, 452.71, 57.17),
+                ["coords"] = vector3(-784.0, 460.54, 56.23),
+                ["heading"] = 359.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.6,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-778.59, 461.88, 57.17),
+                ["coords"] = vector3(-787.49, 457.95, 56.73),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 1.2,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-774.72, 457.93, 57.17),
+                ["coords"] = vector3(-776.96, 463.28, 56.23),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-783.43, 452.76, 57.17),
+                ["coords"] = vector3(-780.89, 467.17, 56.23),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.6,
                 ["text"] = "Search night stand"
             },
         },
@@ -233,22 +278,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "musicequipment",
               ["PropName"] = "prop_tapeplayer_01",
-              ["coords"] = vector3(-785.708, 455.6182, 57.409),
-              ["heading"] = 90.0,
-              ["boxx"] = 0.75,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(-788.68, 458.01, 56.23),
+              ["heading"] = 0.0,
+              ["boxx"] = 0.8,
+              ["boxy"] = 1.0,
+              ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "television",
                 ["PropName"] = "Prop_TV_Flat_01",
-                ["coords"] = vector3(-790.029, 460.0392, 57.551),
-                ["heading"] = 90.0,
-                ["boxx"] = 1.50,
-                ["boxy"] = 2.50,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(-792.0, 465.47, 56.23),
+                ["heading"] = 0.0,
+                ["boxx"] = 2.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the TV"
             },
         },
     },
@@ -259,37 +304,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-533.87, 814.21, 154.81),
+                ["coords"] = vector3(-532.35, 812.86, 153.57),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-540.13, 811.96, 154.8),
+                ["coords"] = vector3(-536.2, 819.71, 153.57),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-530.78, 821.08, 154.81),
+                ["coords"] = vector3(-539.63, 817.23, 154.07),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-526.88, 817.13, 154.81),
+                ["coords"] = vector3(-529.14, 822.51, 153.57),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-535.62, 812.08, 154.81),
+                ["coords"] = vector3(-533.15, 826.37, 153.57),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -299,22 +359,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "musicequipment",
               ["PropName"] = "prop_tapeplayer_01",
-              ["coords"] = vector3(-537.85, 814.9194, 154.92),
-              ["heading"] = 90.0,
-              ["boxx"] = 0.75,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(-540.86, 817.21, 153.57),
+              ["heading"] = 0.0,
+              ["boxx"] = 0.8,
+              ["boxy"] = 1.0,
+              ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(-534.489, 813.9856, 154.77),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(-536.94, 819.31, 153.57),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -325,37 +385,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1232.412, -732.880, 17.791),
+                ["coords"] = vector3(1221.82, -724.81, 17.12),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 2.0,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1229.404, -726.935, 17.779),
+                ["coords"] = vector3(1229.44, -726.72, 17.8),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 3.1,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(1240.420, -722.034, 17.814),
+                ["coords"] = vector3(1240.73, -723.92, 18.56),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(1225.825, -732.900, 22.272),
+                ["coords"] = vector3(1225.86, -732.85, 21.7),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1231.025, -737.130, 21.232),
+                ["coords"] = vector3(1231.06, -737.05, 21.7),
+                ["heading"] = 270.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.6,
+                ["boxy"] = 1.0,
                 ["text"] = "Search night stand"
             },
         },
@@ -369,7 +444,7 @@ Config.Houses = {
               ["heading"] = 0.0,
               ["boxx"] = 0.50,
               ["boxy"] = 2.50,
-              ["text"] = "Take Object"
+              ["text"] = "Take the Art Piece"
             },
             [2] = {
                 ["stolen"] = false,
@@ -380,7 +455,7 @@ Config.Houses = {
                 ["heading"] = 90.0,
                 ["boxx"] = 0.75,
                 ["boxy"] = 1.75,
-                ["text"] = "Take Object"
+                ["text"] = "Take the Art Piece"
             },
         },
     },
@@ -391,37 +466,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(811.650, -167.956, 33.196),
+                ["coords"] = vector3(813.07, -169.33, 31.93),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.80,
+                ["boxy"] = 0.80,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(805.32, -170.20, 33.17),
+                ["coords"] = vector3(809.2, -162.42, 31.93),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(814.73, -161.08, 33.17),
+                ["coords"] = vector3(805.82, -164.96, 32.43),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(818.56, -165.02, 33.17),
+                ["coords"] = vector3(816.33, -159.67, 31.93),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(809.82, -170.18, 33.17),
+                ["coords"] = vector3(812.44, -155.77, 31.93),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -431,22 +521,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "television",
               ["PropName"] = "Prop_TV_Flat_01",
-              ["coords"] = vector3(803.3301, -162.719, 33.023),
-              ["heading"] = 90.0,
-              ["boxx"] = 1.50,
-              ["boxy"] = 2.50,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(801.28, -157.44, 31.93),
+              ["heading"] = 0.0,
+              ["boxx"] = 2.8,
+              ["boxy"] = 0.6,
+              ["text"] = "Take the TV"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(811.000, -168.250, 33.151),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(808.51, -162.89, 31.93),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -457,37 +547,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(8.54, -13.82, 27.6),
+                ["coords"] = vector3(10.01, -15.19, 26.36),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(2.3, -16.07, 27.6),
+                ["coords"] = vector3(6.1, -8.25, 26.36),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(11.6, -6.89, 27.6),
+                ["coords"] = vector3(2.73, -10.83, 26.36),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(15.40464, -10.9103, 28.155),
+                ["coords"] = vector3(13.26, -5.5, 26.36),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(6.78, -16.05, 27.6),
+                ["coords"] = vector3(9.26, -1.64, 26.36),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -497,22 +602,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "musicequipment",
               ["PropName"] = "prop_tapeplayer_01",
-              ["coords"] = vector3(4.501854, -13.1401, 27.623),
+              ["coords"] = vector3(1.54, -10.82, 26.36),
               ["heading"] = 90.0,
-              ["boxx"] = 0.75,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["boxx"] = 1.0,
+              ["boxy"] = 0.7,
+              ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(7.899355, -14.1771, 27.526),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(5.36, -8.75, 26.36),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -523,37 +628,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1013.23, -427.7, 22.64),
+                ["coords"] = vector3(1014.68, -428.97, 21.4),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1006.88, -429.96, 22.64),
+                ["coords"] = vector3(1010.77, -422.17, 21.4),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(1016.26, -420.82, 22.64),
+                ["coords"] = vector3(1007.39, -424.67, 21.4),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(1020.12, -424.75, 22.64),
+                ["coords"] = vector3(1017.88, -419.4, 21.4),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1011.39, -429.92, 22.64),
+                ["coords"] = vector3(1013.86, -415.52, 21.4),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -563,22 +683,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "musicequipment",
               ["PropName"] = "prop_tapeplayer_01",
-              ["coords"] = vector3(1009.150, -427.021, 22.592),
+              ["coords"] = vector3(1006.11, -424.65, 21.4),
               ["heading"] = 90.0,
-              ["boxx"] = 0.50,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["boxx"] = 1.2,
+              ["boxy"] = 0.7,
+              ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(1012.550, -428.027, 22.636),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(1010.1, -422.58, 21.4),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -589,37 +709,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-676.139, 504.5653, 70.361),
+                ["coords"] = vector3(-686.76, 512.72, 69.69),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.9,
+                ["boxy"] = 0.9,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-679.064, 510.5978, 70.332),
+                ["coords"] = vector3(-679.12, 510.71, 70.37),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 3.05,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-668.074, 515.4074, 70.131),
+                ["coords"] = vector3(-667.9, 513.56, 70.93),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.7,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-682.870, 504.5497, 74.842),
+                ["coords"] = vector3(-682.74, 504.59, 74.27),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-677.607, 500.6468, 74.179),
+                ["coords"] = vector3(-677.51, 500.5, 74.27),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.7,
+                ["boxy"] = 1.0,
                 ["text"] = "Search night stand"
             },
         },
@@ -633,7 +768,7 @@ Config.Houses = {
               ["heading"] = 0.0,
               ["boxx"] = 0.50,
               ["boxy"] = 3.00,
-              ["text"] = "Take Object"
+              ["text"] = "Take the Art Piece"
             },
             [2] = {
                 ["stolen"] = false,
@@ -644,7 +779,7 @@ Config.Houses = {
                 ["heading"] = 0.0,
                 ["boxx"] = 0.75,
                 ["boxy"] = 1.75,
-                ["text"] = "Take Object"
+                ["text"] = "Take the Art Piece"
             },
         },
     },
@@ -655,37 +790,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-1305.31, 441.3381, 57.801),
+                ["coords"] = vector3(-1315.93, 449.44, 57.13),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.9,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-1308.24, 447.3600, 57.778),
+                ["coords"] = vector3(-1308.32, 447.46, 57.81),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 3.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-1297.28, 452.1908, 57.571),
+                ["coords"] = vector3(-1297.05, 450.35, 58.37),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.7,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-1311.95, 441.3222, 62.282),
+                ["coords"] = vector3(-1311.95, 441.37, 61.71),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-1306.70, 437.3234, 61.760),
+                ["coords"] = vector3(-1306.71, 437.25, 61.71),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -699,7 +849,7 @@ Config.Houses = {
               ["heading"] = 180.0,
               ["boxx"] = 0.75,
               ["boxy"] = 2.50,
-              ["text"] = "Take Object"
+              ["text"] = "Take the TV"
             },
             [2] = {
                 ["stolen"] = false,
@@ -710,48 +860,63 @@ Config.Houses = {
                 ["heading"] = 90.0,
                 ["boxx"] = 0.75,
                 ["boxy"] = 1.75,
-                ["text"] = "Take Object"
+                ["text"] = "Take the Art Piece"
             },
         },
     },
     ["house11"] = {
-        coords = vector4(-1413.59,  462.1,  109.2,  164.5),
+        coords = vector4(-1413.59, 462.1, 109.2, 164.5),
         ["opened"] = false,
         ["tier"] = 2,
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-1410.75, 454.4768, 66.041),
+                ["coords"] = vector3(-1421.39, 462.65, 65.37),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.9,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-1413.64, 460.60, 66.107),
+                ["coords"] = vector3(-1413.76, 460.67, 66.05),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 3.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-1402.75, 465.4844, 65.811),
+                ["coords"] = vector3(-1402.61, 463.57, 66.61),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.7,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-1417.47, 454.5102, 70.522),
+                ["coords"] = vector3(-1417.45, 454.58, 69.95),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-1412.22, 450.2932, 69.784),
+                ["coords"] = vector3(-1412.17, 450.55, 69.95),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search night stand"
             },
         },
@@ -765,7 +930,7 @@ Config.Houses = {
               ["heading"] = 180.0,
               ["boxx"] = 0.75,
               ["boxy"] = 2.50,
-              ["text"] = "Take Object"
+              ["text"] = "Take the TV"
             },
             [2] = {
                 ["stolen"] = false,
@@ -776,48 +941,63 @@ Config.Houses = {
                 ["heading"] = 90.0,
                 ["boxx"] = 0.50,
                 ["boxy"] = 1.75,
-                ["text"] = "Take Object"
+                ["text"] = "Take the Art Piece"
             },
         },
     },
     ["house12"] = {
-        coords = vector4(-2015.01,  499.84,  107.17,  85.5),
+        coords = vector4(-2015.01, 499.84, 107.17, 85.5),
         ["opened"] = false,
         ["tier"] = 2,
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-2012.18, 492.2652, 64.011),
+                ["coords"] = vector3(-2022.81, 500.4, 63.34),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.9,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-2015.12, 498.3758, 63.988),
+                ["coords"] = vector3(-2015.17, 498.4, 64.02),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 3.1,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-2004.23, 503.1805, 63.781),
+                ["coords"] = vector3(-2003.94, 501.29, 64.58),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.7,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-2018.87, 492.2805, 68.492),
+                ["coords"] = vector3(-2018.79, 492.32, 67.92),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-2013.63, 488.0240, 68.252),
+                ["coords"] = vector3(-2013.57, 488.28, 67.92),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search night stand"
             },
         },
@@ -827,63 +1007,78 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "artpiece",
               ["PropName"] = "ex_mp_h_acc_artwallm_02",
-              ["coords"] = vector3(-2015.19, 498.5723, 64.093),
-              ["heading"] = 180.0,
-              ["boxx"] = 0.75,
-              ["boxy"] = 2.50,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(-2020.88, 497.57, 68.42),
+              ["heading"] = 0.0,
+              ["boxx"] = 1.4,
+              ["boxy"] = 0.4,
+              ["text"] = "Take the Art Piece"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "artpiece",
                 ["PropName"] = "apa_p_h_acc_artwalll_02",
-                ["coords"] = vector3(-2022.85, 505.9724, 69.085),
+                ["coords"] = vector3(-2022.85, 505.9724, 69.885),
                 ["heading"] = 0.0,
                 ["boxx"] = 0.75,
                 ["boxy"] = 2.75,
-                ["text"] = "Take Object"
+                ["text"] = "Take the Art Piece"
             },
         },
     },
     ["house13"] = {
-        coords = vector4(329.37,  -1845.84,  27.74,  236.5),
+        coords = vector4(329.37, -1845.84, 27.74, 236.5),
         ["opened"] = false,
         ["tier"] = 1,
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(332.19, -1850.17, -14.96),
+                ["coords"] = vector3(333.62, -1851.57, -16.2),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(325.86, -1852.38, -14.96),
+                ["coords"] = vector3(329.76, -1844.62, -16.2),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.4,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(335.22, -1843.27, -14.96),
+                ["coords"] = vector3(326.36, -1847.13, -15.7),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(339.1, -1847.2, -14.96),
+                ["coords"] = vector3(336.87, -1841.85, -16.2),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(330.37, -1852.38, -14.96),
+                ["coords"] = vector3(332.97, -1837.95, -16.2),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -893,22 +1088,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "musicequipment",
               ["PropName"] = "prop_tapeplayer_01",
-              ["coords"] = vector3(328.10, -1849.52, -15.02),
+              ["coords"] = vector3(325.05, -1847.18, -16.2),
               ["heading"] = 90.0,
-              ["boxx"] = 0.75,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["boxx"] = 1.2,
+              ["boxy"] = 0.7,
+              ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(331.3648, -1850.45, -14.92),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(329.06, -1845.05, -16.2),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -920,36 +1115,51 @@ Config.Houses = {
             [1] = {
                 ["type"] = "cabin",
                 ["coords"] = vector3(492.41, -1718.42, -12.95),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.6,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
                 ["coords"] = vector3(486.13, -1720.65, -13.0),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.6,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(495.54, -1711.56, -13.0),
+                ["coords"] = vector3(486.62, -1715.39, -13.74),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(499.3, -1715.48, -13.0),
+                ["coords"] = vector3(497.15, -1710.11, -14.24),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(490.65, -1720.57, -13.0),
+                ["coords"] = vector3(493.19, -1706.25, -14.24),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -959,22 +1169,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "musicequipment",
               ["PropName"] = "prop_tapeplayer_01",
-              ["coords"] = vector3(488.35, -1717.80, -13.04),
+              ["coords"] = vector3(485.42, -1715.45, -14.24),
               ["heading"] = 90.0,
-              ["boxx"] = 0.25,
-              ["boxy"] = 0.75,
-              ["text"] = "Take Object"
+              ["boxx"] = 1.0,
+              ["boxy"] = 0.7,
+              ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(491.5265, -1718.63, -12.74),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(489.31, -1713.35, -14.24),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -985,37 +1195,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1314.90, -1701.68, 15.52),
+                ["coords"] = vector3(1316.37, -1703.03, 14.28),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1308.64, -1703.88, 15.52),
+                ["coords"] = vector3(1312.49, -1696.13, 14.28),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(1318.02, -1694.77, 15.52),
+                ["coords"] = vector3(1309.1, -1698.65, 14.78),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(1321.88, -1698.73, 15.52),
+                ["coords"] = vector3(1319.69, -1693.35, 14.28),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1313.15, -1703.86, 15.52),
+                ["coords"] = vector3(1315.61, -1689.49, 14.28),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -1025,22 +1250,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "television",
               ["PropName"] = "Prop_TV_Flat_01",
-              ["coords"] = vector3(496.06, -1696.42, -12.92),
-              ["heading"] = 90.0,
-              ["boxx"] = 1.50,
-              ["boxy"] = 3.50,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(1304.51, -1691.15, 14.28),
+              ["heading"] = 0.0,
+              ["boxx"] = 3.0,
+              ["boxy"] = 0.7,
+              ["text"] = "Take the TV"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(496.06, -1696.42, -12.92),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(1311.81, -1696.57, 14.28),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
               },
         },
     },
@@ -1051,37 +1276,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1381.97, -1519.22, 15.73),
+                ["coords"] = vector3(1383.45, -1520.56, 14.49),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1375.70, -1521.42, 15.73),
+                ["coords"] = vector3(1379.55, -1513.66, 14.49),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.6,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(1385.05, -1512.32, 15.73),
+                ["coords"] = vector3(1376.23, -1516.2, 14.49),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(1388.95, -1516.27, 15.73),
+                ["coords"] = vector3(1386.74, -1510.89, 14.49),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1380.20, -1521.37, 15.73),
+                ["coords"] = vector3(1382.73, -1507.03, 14.49),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -1091,22 +1331,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "television",
               ["PropName"] = "Prop_TV_Flat_01",
-              ["coords"] = vector3(1373.835, -1514.11, 15.655),
-              ["heading"] = 90.0,
-              ["boxx"] = 1.50,
-              ["boxy"] = 3.50,
-              ["text"] = "Take Object"
+              ["coords"] = vector3(1371.65, -1508.74, 14.49),
+              ["heading"] = 0.0,
+              ["boxx"] = 3,
+              ["boxy"] = 0.7,
+              ["text"] = "Take the TV"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(1381.223, -1519.56, 15.627),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(1378.88, -1514.15, 14.49),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -1117,37 +1357,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1317.25, -1737.48, 12.0),
+                ["coords"] = vector3(1318.74, -1738.86, 10.76),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1310.97, -1739.70, 12.0),
+                ["coords"] = vector3(1314.87, -1731.93, 10.76),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(1320.33, -1730.57, 12.0),
+                ["coords"] = vector3(1311.45, -1734.46, 11.26),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(1324.22, -1734.50, 12.0),
+                ["coords"] = vector3(1321.99, -1729.16, 10.76),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1315.48, -1739.68, 12.0),
+                ["coords"] = vector3(1318.05, -1725.28, 10.76),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -1157,22 +1412,22 @@ Config.Houses = {
                 ["isBusy"] = false,
                 ["itemname"] = "musicequipment",
                 ["PropName"] = "prop_tapeplayer_01",
-                ["coords"] = vector3(1313.230, -1736.75, 12.170),
+                ["coords"] = vector3(1310.25, -1734.49, 10.76),
                 ["heading"] = 90.0,
-                ["boxx"] = 0.25,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["boxx"] = 1.0,
+                ["boxy"] = 0.7,
+                ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(1316.577, -1737.79, 12.152),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(1314.15, -1732.37, 10.76),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
+                ["text"] = "Take the Microwave"
             },
         },
     },
@@ -1183,37 +1438,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1303.18, -1756.67, 11.57),
+                ["coords"] = vector3(1304.69, -1757.97, 10.33),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1296.90, -1758.90, 12.0),
+                ["coords"] = vector3(1300.77, -1751.11, 10.33),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.4,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(1306.25, -1749.77, 11.57),
+                ["coords"] = vector3(1297.38, -1753.61, 10.83),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(1310.18, -1753.71, 12.0),
+                ["coords"] = vector3(1307.87, -1748.36, 10.33),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(1301.38, -1758.89, 12.0),
+                ["coords"] = vector3(1303.92, -1744.5, 10.33),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -1223,21 +1493,21 @@ Config.Houses = {
                 ["isBusy"] = false,
                 ["itemname"] = "musicequipment",
                 ["PropName"] = "prop_tapeplayer_01",
-                ["coords"] = vector3(1299.144, -1756.00, 11.513),
-                ["heading"] = 187.5,
-                ["boxx"] = 0.25,
-                ["boxy"] = 0.75,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(1296.19, -1753.68, 10.33),
+                ["heading"] = 90.0,
+                ["boxx"] = 1.0,
+                ["boxy"] = 0.7,
+                ["text"] = "Take the Music Equipment"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "microwave",
                 ["PropName"] = "prop_micro_01",
-                ["coords"] = vector3(1302.500, -1756.97, 11.298),
-                ["heading"] = 90.0,
-                ["boxx"] = 0.75,
-                ["boxy"] = 0.75,
+                ["coords"] = vector3(1300.1, -1751.57, 10.33),
+                ["heading"] = 0.0,
+                ["boxx"] = 0.8,
+                ["boxy"] = 0.8,
                 ["text"] = "Take Object"
             },
         },
@@ -1250,37 +1520,52 @@ Config.Houses = {
         ["furniture"] = {
             [1] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-443.359, 678.8075, 109.96),
+                ["coords"] = vector3(-453.99, 686.91, 109.29),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.9,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [2] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-446.246, 684.7706, 110.01),
+                ["coords"] = vector3(-446.35, 684.92, 109.96),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 3.4,
+                ["boxy"] = 0.7,
                 ["text"] = "Search cabin"
             },
             [3] = {
                 ["type"] = "kitchen",
-                ["coords"] = vector3(-435.312, 689.7086, 109.73),
+                ["coords"] = vector3(-435.17, 687.8, 110.53),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.7,
+                ["boxy"] = 0.7,
                 ["text"] = "Search kitchen cabins"
             },
             [4] = {
                 ["type"] = "chest",
-                ["coords"] = vector3(-449.977, 678.850, 114.44),
+                ["coords"] = vector3(-449.96, 678.83, 113.87),
+                ["heading"] = 0.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.2,
+                ["boxy"] = 0.8,
                 ["text"] = "Search chest"
             },
             [5] = {
                 ["type"] = "cabin",
-                ["coords"] = vector3(-444.810, 674.6101, 113.49),
+                ["coords"] = vector3(-444.78, 674.77, 113.87),
+                ["heading"] = 90.0,
                 ["searched"] = false,
                 ["isBusy"] = false,
+                ["boxx"] = 1.5,
+                ["boxy"] = 0.8,
                 ["text"] = "Search night stand"
             },
         },
@@ -1290,22 +1575,22 @@ Config.Houses = {
               ["isBusy"] = false,
               ["itemname"] = "television",
               ["PropName"] = "Prop_TV_Flat_01",
-              ["coords"] = vector3(-447.784, 675.5838, 109.87),
+              ["coords"] = vector3(-447.65, 674.66, 109.97),
               ["heading"] = 90.0,
-              ["boxx"] = 1.5,
-              ["boxy"] = 2.5,
-              ["text"] = "Take Object"
+              ["boxx"] = 3.3,
+              ["boxy"] = 0.8,
+              ["text"] = "Take the TV"
             },
             [2] = {
                 ["stolen"] = false,
                 ["isBusy"] = false,
                 ["itemname"] = "pcequipment",
                 ["PropName"] = "prop_laptop_01a",
-                ["coords"] = vector3(-453.39, 684.34, 113.67),
-                ["heading"] = 187.5,
-                ["boxx"] = 1.5,
-                ["boxy"] = 2.5,
-                ["text"] = "Take Object"
+                ["coords"] = vector3(-453.33, 684.42, 113.87),
+                ["heading"] = 0.0,
+                ["boxx"] = 2.9,
+                ["boxy"] = 2.1,
+                ["text"] = "Take the Laptop"
             },
         },
     },
