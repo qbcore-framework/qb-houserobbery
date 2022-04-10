@@ -102,9 +102,9 @@ local function lockpickFinish(success)
                 TriggerEvent('inventory:client:ItemBox', itemInfo, "remove")
             end
         else
-            local itemInfo = QBCore.Shared.Items["advancedlockpick"]
-            if math.random(1, 100) < 40 then
-                TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1)
+            local itemInfo = QBCore.Shared.Items["lockpick"]
+            if math.random(1, 100) < 60 then
+                TriggerServerEvent("QBCore:Server:RemoveItem", "lockpick", 1)
                 TriggerEvent('inventory:client:ItemBox', itemInfo, "remove")
             end
         end
@@ -281,8 +281,9 @@ end)
 CreateThread(function()
     Wait(500)
     requiredItems = {
-        [1] = {name = QBCore.Shared.Items["advancedlockpick"]["name"], image = QBCore.Shared.Items["advancedlockpick"]["image"]},
+        [1] = {name = QBCore.Shared.Items["lockpick"]["name"], image = QBCore.Shared.Items["lockpick"]["image"]},
         [2] = {name = QBCore.Shared.Items["screwdriverset"]["name"], image = QBCore.Shared.Items["screwdriverset"]["image"]},
+	[3] = {name = QBCore.Shared.Items["advancedlockpick"]["name"], image = QBCore.Shared.Items["advancedlockpick"]["image"]},		
     }
     while true do
         inRange = false
