@@ -7,7 +7,7 @@ local function ResetHouseStateTimer(house)
     local time = tonumber(num)
     SetTimeout(time, function()
         Config.Houses[house]["opened"] = false
-        for k, v in pairs(Config.Houses[house]["furniture"]) do
+        for _, v in pairs(Config.Houses[house]["furniture"]) do
             v["searched"] = false
         end
         TriggerClientEvent('qb-houserobbery:client:ResetHouseState', -1, house)
@@ -16,7 +16,7 @@ end
 
 -- Callbacks
 
-QBCore.Functions.CreateCallback('qb-houserobbery:server:GetHouseConfig', function(source, cb)
+QBCore.Functions.CreateCallback('qb-houserobbery:server:GetHouseConfig', function(_, cb)
     cb(Config.Houses)
 end)
 
@@ -60,7 +60,7 @@ RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
             itemCount = 2
         end
 
-        for i = 1, itemCount, 1 do
+        for _ = 1, itemCount, 1 do
             local randomItem = Config.Rewards[Tier][Config.Houses[house]["furniture"][cabin]["type"]][math.random(1, #Config.Rewards[Tier][Config.Houses[house]["furniture"][cabin]["type"]])]
             local itemInfo = QBCore.Shared.Items[randomItem]
             if math.random(1, 100) == 69 then
