@@ -1,9 +1,16 @@
 # qb-houserobbery
 House Robberies For QB-Core
 
+_It is strongly recommended that you use the **Config.DrawSprite** found in qb-target/init.lua (line 36)_
+
+Without Config.DrawSprite, players may find it difficult for the first few robberies to find the lootable locations.
+
 ## Dependencies
 - qb-lockpick: https://github.com/qbcore-framework/qb-lockpick
 - qb-skillbar: https://github.com/qbcore-framework/qb-skillbar
+
+## Showcase
+See a video showcase of this script by [clicking here.](https://youtu.be/hWlFcKYiijg)
 
 # License
 

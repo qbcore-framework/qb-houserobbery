@@ -1,12 +1,21 @@
 Config = {}
+------- New Options -------
 
-Config.MinZOffset = 45
+Config.LockpickOnUse = true -- Allows using the lockpick to open the door (still triggers the same minigame)
+Config.ShowRequiredItems = true -- Allows toggling of required items showing when near the door.
+Config.LootableIcon = 'fas fa-box' -- Icon for inside lootable zones
+Config.MinigameType = "lockpick" -- Default: "lockpick, Available Options: "lockpick" or "skillbar"
 
-Config.MinimumHouseRobberyPolice = 2
+---------------------------
+Config.MinZOffset = 45 -- Leave this value alone as it can cause issues.
+Config.DrawText = true -- When enabled, you will see floating text at the robbery loot locations while searching & after searching. If searching, it will say, searching, after being searched, it will say empty.
+Config.MinimumHouseRobberyPolice = -1 --- Amount of Police Required for the client to be able to lockpick a door (default: -1 (no minimum). When changing use integer values.)
 
+-- Time Restrictions where client cannot rob.
 Config.MinimumTime = 5
 Config.MaximumTime = 22
 
+-- Rewards for each lootable area.
 Config.Rewards = {
     [1] = {
         ["cabin"] = {"plastic", "diamond_ring", "goldchain", "weed_skunk", "thermite", "cryptostick", "weapon_golfclub"},
@@ -16,6 +25,8 @@ Config.Rewards = {
     }
 }
 
+
+-- Robbery Locations --
 Config.Houses = {
     ["perfectdrive1"] = {
         ["coords"] = {
@@ -2887,7 +2898,7 @@ Config.Houses = {
             },
         }
     },
-    ["grove1"] = {
+    ["grove1"] = { -- 76.36, -1948.1, 21.17
         ["coords"] = {
             ["x"] = 76.36,
             ["y"] = -1948.1,
@@ -4853,9 +4864,12 @@ Config.Houses = {
                 ["isBusy"] = false,
                 ["text"] = "Search through shelves"
             },
-        }
+        },
     },
 }
+
+
+-- For Dropping Fingerprints With No Gloves --
 
 Config.MaleNoHandshoes = {
     [0] = true, [1] = true, [2] = true, [3] = true, [4] = true, [5] = true, [6] = true, [7] = true, [8] = true, [9] = true, [10] = true, [11] = true, [12] = true, [13] = true, [14] = true, [15] = true, [16] = true, [18] = true, [26] = true, [52] = true, [53] = true, [54] = true, [55] = true, [56] = true, [57] = true, [58] = true, [59] = true, [60] = true, [61] = true, [62] = true, [112] = true, [113] = true, [114] = true, [118] = true, [125] = true, [132] = true
