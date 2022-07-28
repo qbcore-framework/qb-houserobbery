@@ -9,6 +9,9 @@ Without Config.DrawSprite, players may find it difficult for the first few robbe
 - qb-lockpick: https://github.com/qbcore-framework/qb-lockpick
 - qb-skillbar: https://github.com/qbcore-framework/qb-skillbar
 
+## Showcase
+See a video showcase of this script by [clicking here.](https://youtu.be/hWlFcKYiijg)
+
 # License
 
     QBCore Framework
