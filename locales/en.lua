@@ -9,6 +9,15 @@ local Translations = {
     },
     success = {
         ["worked"] = "It worked!",
+    },
+    info = {
+        ["palert"] = "Attempted House Robbery",
+        ["henter"] = "~g~E~w~ - To Enter",
+        ["hleave"] = "~g~E~w~ - To leave home",
+        ["aint"] = "~g~E~w~ - ", -- interaction to search the furniture
+        ["hsearch"] = "Searching...",
+        ["hsempty"] = "Empty..",
+
     }
 }
 Lang = Locale:new({
