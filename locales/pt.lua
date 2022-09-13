@@ -11,6 +11,11 @@ local Translations = {
         ["worked"] = "Funcionou!",
     }
 }
-Lang = Locale:new({
-phrases = Translations,
-warnOnMissing = true})
+
+if GetConvar('qb_locale', 'en') == 'pt' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end
