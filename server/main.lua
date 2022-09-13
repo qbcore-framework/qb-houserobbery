@@ -38,7 +38,6 @@ RegisterNetEvent('qb-houserobbery:server:enterHouse', function(house)
 end)
 
 RegisterNetEvent('qb-houserobbery:server:lockHouse', function(house)
-    local src = source
     Config.Houses[house]["opened"] = false
     TriggerClientEvent('qb-houserobbery:client:ResetHouseState', -1, house)
 end)
