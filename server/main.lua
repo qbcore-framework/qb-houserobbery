@@ -69,10 +69,10 @@ RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
                 Player.Functions.AddItem(randomItem, 2)
                 TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
             elseif math.random(1, 100) == 35 then
-                    randomItem = "weed_og-kush_seed"
-                    itemInfo = QBCore.Shared.Items[randomItem]
-                    Player.Functions.AddItem(randomItem, 1)
-                    TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
+                randomItem = "weed_og-kush_seed"
+                itemInfo = QBCore.Shared.Items[randomItem]
+                Player.Functions.AddItem(randomItem, 1)
+                TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
             else
                 if not itemInfo["unique"] then
                     local itemAmount = math.random(1, 3)
@@ -103,4 +103,20 @@ RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
 
     Config.Houses[house]["furniture"][cabin]["searched"] = true
     TriggerClientEvent('qb-houserobbery:client:setCabinState', -1, house, cabin, true)
+end)
+
+RegisterNetEvent('qb-houserobbery:server:removeAdvancedLockpick', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('advancedlockpick', 1)
+end)
+
+RegisterNetEvent('qb-houserobbery:server:removeLockpick', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('lockpick', 1)
 end)
