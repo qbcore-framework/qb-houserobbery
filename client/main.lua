@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local PlayerJob = {}
 local inside = false
 local currentHouse = nil
 local closestHouse
@@ -193,7 +194,12 @@ end
 
 -- Events
 
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
+    PlayerJob = JobInfo
+end)
+
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+    PlayerJob = QBCore.Functions.GetPlayerData().job
     QBCore.Functions.TriggerCallback('qb-houserobbery:server:GetHouseConfig', function(HouseConfig)
         Config.Houses = HouseConfig
     end)
@@ -298,6 +304,13 @@ CreateThread(function()
                             inRange = true
                             if CurrentCops >= Config.MinimumHouseRobberyPolice then
                                 if Config.Houses[k]["opened"] then
+                                    if PlayerJob.name == 'police' then
+                                        DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"] + 0.25, '~g~G~w~ - To Lock House')
+                                        if IsControlJustPressed(0, 58) then
+                                            TriggerServerEvent('qb-houserobbery:server:lockHouse', k)
+                                        end
+                                    end
+
                                     DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], '~g~E~w~ - To Enter')
                                     if IsControlJustPressed(0, 38) then
                                         enterRobberyHouse(k)

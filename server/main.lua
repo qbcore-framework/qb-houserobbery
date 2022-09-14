@@ -37,6 +37,11 @@ RegisterNetEvent('qb-houserobbery:server:enterHouse', function(house)
     Config.Houses[house]["opened"] = true
 end)
 
+RegisterNetEvent('qb-houserobbery:server:lockHouse', function(house)
+    Config.Houses[house]["opened"] = false
+    TriggerClientEvent('qb-houserobbery:client:ResetHouseState', -1, house)
+end)
+
 RegisterNetEvent('qb-houserobbery:server:searchCabin', function(cabin, house)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
