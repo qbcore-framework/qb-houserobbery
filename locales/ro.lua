@@ -1,7 +1,3 @@
---[[
-Romanian base language translation for qb-houserobbery
-Translation done by wanderrer (Martin Riggs#0807 on Discord)
-]]--
 local Translations = {
     error = {
         ["missing_something"] = "Se pare ca-ti lipseste ceva...",
