@@ -14,15 +14,6 @@ local Translations = {
     success = {
         ["worked"] = "Excelent, a functionat!",
     },
-    info = {
-        ["palert"] = "Tentativa de jaf",
-        ["henter"] = "~g~E~w~ - Intra in casa",
-        ["hleave"] = "~g~E~w~ - Iesi din casa",
-        ["aint"] = "~g~E~w~ - ", -- interaction to search the furniture
-        ["hsearch"] = "Scotocesti...",
-        ["hsempty"] = "Nimic...",
-
-    }
 }
 
 if GetConvar('qb_locale', 'en') == 'ro' then
