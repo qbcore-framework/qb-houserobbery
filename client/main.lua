@@ -127,16 +127,16 @@ local function LockpickDoorAnim()
     end)
 end
 
-local function IsWearingHandshoes()
+local function IsWearingGloves()
     local armIndex = GetPedDrawableVariation(PlayerPedId(), 3)
     local model = GetEntityModel(PlayerPedId())
     local retval = true
     if model == `mp_m_freemode_01` then
-        if Config.MaleNoHandshoes[armIndex] ~= nil and Config.MaleNoHandshoes[armIndex] then
+        if Config.MaleNoGloves[armIndex] ~= nil and Config.MaleNoGloves[armIndex] then
             retval = false
         end
     else
-        if Config.FemaleNoHandshoes[armIndex] ~= nil and Config.FemaleNoHandshoes[armIndex] then
+        if Config.FemaleNoGloves[armIndex] ~= nil and Config.FemaleNoGloves[armIndex] then
             retval = false
         end
     end
@@ -146,7 +146,7 @@ end
 local function searchCabin(cabin)
     local ped = PlayerPedId()
     local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
-    if math.random(1, 100) <= 85 and not IsWearingHandshoes() then
+    if math.random(1, 100) <= 85 and not IsWearingGloves() then
         local pos = GetEntityCoords(PlayerPedId())
         TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
     end
@@ -236,7 +236,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                     if not Config.Houses[closestHouse]["opened"] then
                         PoliceCall()
                         TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
-                        if math.random(1, 100) <= 85 and not IsWearingHandshoes() then
+                        if math.random(1, 100) <= 85 and not IsWearingGloves() then
                             local pos = GetEntityCoords(PlayerPedId())
                             TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
                         end
@@ -255,7 +255,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                         if not Config.Houses[closestHouse]["opened"] then
                             PoliceCall()
                             TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
-                            if math.random(1, 100) <= 85 and not IsWearingHandshoes() then
+                            if math.random(1, 100) <= 85 and not IsWearingGloves() then
                                 local pos = GetEntityCoords(PlayerPedId())
                                 TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
                             end
