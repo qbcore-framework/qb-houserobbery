@@ -6,6 +6,7 @@ local Translations = {
         ["process_cancelled"] = "Process Canceled..",
         ["didnt_work"] = "It did not work..",
         ["emty_box"] = "The Box Is Empty..",
+        ["not_allowed_time"] = "You can't do that at this time of day."
     },
     success = {
         ["worked"] = "It worked!",

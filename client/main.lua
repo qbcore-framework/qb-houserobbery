@@ -7,12 +7,7 @@ local IsLockpicking = false
 local houseObj = {}
 local POIOffsets = nil
 local usingAdvanced = false
-local requiredItemsShowed = false
-local requiredItems = {}
 local CurrentCops = 0
-local openingDoor = false
-local SucceededAttempts = 0
-local NeededAttempts = 4
 
 -- Functions
 
@@ -32,10 +27,8 @@ local function DrawText3Ds(x, y, z, text)
 end
 
 local function loadAnimDict(dict)
-    while (not HasAnimDictLoaded(dict)) do
-        RequestAnimDict(dict)
-        Wait(5)
-    end
+    RequestAnimDict(dict)
+    while (not HasAnimDictLoaded(dict)) do Wait(5) end
 end
 
 local function openHouseAnim()
@@ -49,12 +42,10 @@ local function enterRobberyHouse(house)
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_open", 0.25)
     openHouseAnim()
     Wait(250)
-    local coords = { x = Config.Houses[house]["coords"]["x"], y = Config.Houses[house]["coords"]["y"], z= Config.Houses[house]["coords"]["z"] - Config.MinZOffset}
-    local data
-    if Config.Houses[house]["tier"] == 1 then
-        data = exports['qb-interior']:CreateHouseRobbery(coords)
-    end
-    Wait(100)
+    local coords = { x = Config.Houses[house].coords.x, y = Config.Houses[house].coords.y, z= Config.Houses[house].coords.z - Config.MinZOffset}
+    local data = exports['qb-interior']:CreateHouseRobbery(coords)
+    if not data then return end
+
     houseObj = data[1]
     POIOffsets = data[2]
     inside = true
@@ -81,28 +72,25 @@ local function leaveRobberyHouse(house)
     end)
 end
 
-local function PoliceCall()
-    local chance = 75
-    if GetClockHours() >= 1 and GetClockHours() <= 6 then
-        chance = 25
-    end
-    if math.random(1, 100) <= chance then
+local function alertCops()
+    if math.random(1, 100) < Config.ChanceToAlertPolice then
         TriggerServerEvent('police:server:policeAlert', Lang:t("info.palert"))
     end
 end
 
 local function lockpickFinish(success)
+    ClearPedTasks(PlayerPedId())
     if success then
         TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
         QBCore.Functions.Notify(Lang:t("success.worked"), "success", 2500)
     else
         if usingAdvanced then
-            if math.random(1, 100) < 20 then
+            if math.random(1, 100) <= Config.ChanceToBreakAdvancedLockPick then
                 TriggerServerEvent("qb-houserobbery:server:removeAdvancedLockpick")
                 TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
             end
         else
-            if math.random(1, 100) < 40 then
+            if math.random(1, 100) <= Config.ChanceToBreakLockPick then
                 TriggerServerEvent("qb-houserobbery:server:removeLockpick")
                 TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
             end
@@ -110,21 +98,6 @@ local function lockpickFinish(success)
 
         QBCore.Functions.Notify(Lang:t("error.didnt_work"), "error", 2500)
     end
-end
-
-local function LockpickDoorAnim()
-    openingDoor = true
-    CreateThread(function()
-        while true do
-            if openingDoor then
-                TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
-            else
-                StopAnimTask(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 1.0)
-                break
-            end
-            Wait(1000)
-        end
-    end)
 end
 
 local function IsWearingGloves()
@@ -145,45 +118,49 @@ end
 
 local function searchCabin(cabin)
     local ped = PlayerPedId()
-    local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
     if math.random(1, 100) <= 85 and not IsWearingGloves() then
         local pos = GetEntityCoords(PlayerPedId())
         TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
     end
-    LockpickDoorAnim()
+
+    loadAnimDict('creatures@rottweiler@tricks@')
+    TaskPlayAnim(PlayerPedId(), 'creatures@rottweiler@tricks@', 'petting_franklin', 8.0, 8.0, -1, 17, 0, false, false, false)
+
     TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, true)
     FreezeEntityPosition(ped, true)
     IsLockpicking = true
+
+    local succeededAttempts = 0
+    local neededAttempts = 4
+    local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
     Skillbar.Start({
-        duration = math.random(7500, 15000),
+        duration = math.random(4500, 7000),
         pos = math.random(10, 30),
         width = math.random(10, 20),
     }, function()
-        if SucceededAttempts + 1 >= NeededAttempts then
-            openingDoor = false
+        if succeededAttempts + 1 >= neededAttempts then
             ClearPedTasks(PlayerPedId())
-            TriggerServerEvent('qb-houserobbery:server:searchCabin', cabin, currentHouse)
+            TriggerServerEvent('qb-houserobbery:server:searchFurniture', cabin, currentHouse)
             Config.Houses[currentHouse]["furniture"][cabin]["searched"] = true
             TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
-            SucceededAttempts = 0
+            succeededAttempts = 0
             FreezeEntityPosition(ped, false)
             SetTimeout(500, function()
                 IsLockpicking = false
             end)
         else
             Skillbar.Repeat({
-                duration = math.random(700, 1250),
+                duration = math.random(2000, 4000),
                 pos = math.random(10, 40),
                 width = math.random(10, 13),
             })
-            SucceededAttempts = SucceededAttempts + 1
+            succeededAttempts = succeededAttempts + 1
         end
     end, function()
-        openingDoor = false
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
         QBCore.Functions.Notify(Lang:t("error.process_cancelled"), "error", 3500)
-        SucceededAttempts = 0
+        succeededAttempts = 0
         FreezeEntityPosition(ped, false)
         SetTimeout(500, function()
             IsLockpicking = false
@@ -227,48 +204,37 @@ RegisterNetEvent('qb-houserobbery:client:SetBusyState', function(cabin, house, b
 end)
 
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
-    local hours = GetClockHours()
-    if hours >= Config.MinimumTime or hours <= Config.MaximumTime then
-        usingAdvanced = isAdvanced
-        if usingAdvanced then
-            if closestHouse ~= nil then
-                if CurrentCops >= Config.MinimumHouseRobberyPolice then
-                    if not Config.Houses[closestHouse]["opened"] then
-                        PoliceCall()
-                        TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
-                        if math.random(1, 100) <= 85 and not IsWearingGloves() then
-                            local pos = GetEntityCoords(PlayerPedId())
-                            TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
-                        end
-                    else
-                        QBCore.Functions.Notify(Lang:t("error.door_open"), "error", 3500)
+    if Config.UseClockHours then
+        if GetClockHours() < Config.MinimumTime or GetClockHours() > Config.MaximumTime then
+            QBCore.Functions.Notify(Lang:t("error.not_allowed_time"), "error", 3500)
+            return
+        end
+    end
+
+    usingAdvanced = isAdvanced
+    if closestHouse ~= nil then
+        if CurrentCops >= Config.PoliceOnDutyRequired then
+            if not Config.Houses[closestHouse]["opened"] then
+                if not usingAdvanced then
+                    if Config.RequireScrewdriver and not QBCore.Functions.HasItem("screwdriverset") then
+                        QBCore.Functions.Notify(Lang:t("error.missing_something"), "error", 3500)
+                        return
                     end
-                else
-                    QBCore.Functions.Notify(Lang:t("error.not_enough_police"), "error", 3500)
                 end
+
+                loadAnimDict("mp_missheist_countrybank@nervous")
+                TaskPlayAnim(PlayerPedId(), "mp_missheist_countrybank@nervous", "nervous_idle", 8.0, 8.0, -1, 49, 0.0, false, false, false)
+                alertCops()
+                TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+                if math.random(1, 100) <= 85 and not IsWearingGloves() then
+                    local pos = GetEntityCoords(PlayerPedId())
+                    TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
+                end
+            else
+                QBCore.Functions.Notify(Lang:t("error.door_open"), "error", 3500)
             end
         else
-            local result = QBCore.Functions.HasItem("screwdriverset")
-            if closestHouse ~= nil then
-                if result then
-                    if CurrentCops >= Config.MinimumHouseRobberyPolice then
-                        if not Config.Houses[closestHouse]["opened"] then
-                            PoliceCall()
-                            TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
-                            if math.random(1, 100) <= 85 and not IsWearingGloves() then
-                                local pos = GetEntityCoords(PlayerPedId())
-                                TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
-                            end
-                        else
-                            QBCore.Functions.Notify(Lang:t("error.door_open"), "error", 3500)
-                        end
-                    else
-                        QBCore.Functions.Notify(Lang:t("error.not_enough_police"), "error", 3500)
-                    end
-                else
-                    QBCore.Functions.Notify(Lang:t("error.missing_something"), "error", 3500)
-                end
-            end
+            QBCore.Functions.Notify(Lang:t("error.not_enough_police"), "error", 3500)
         end
     end
 end)
@@ -277,51 +243,55 @@ end)
 
 CreateThread(function()
     Wait(500)
-    requiredItems = {
+    local requiredItems = {
         [1] = {name = QBCore.Shared.Items["advancedlockpick"]["name"], image = QBCore.Shared.Items["advancedlockpick"]["image"]},
         [2] = {name = QBCore.Shared.Items["screwdriverset"]["name"], image = QBCore.Shared.Items["screwdriverset"]["image"]},
     }
+    local requiredItemsShowed = false
     while true do
         inRange = false
         local PlayerPed = PlayerPedId()
         local PlayerPos = GetEntityCoords(PlayerPed)
         closestHouse = nil
-        if QBCore ~= nil then
-            local hours = GetClockHours()
-            if hours >= Config.MinimumTime or hours <= Config.MaximumTime then
-                if not inside then
-                    for k, _ in pairs(Config.Houses) do
-                        local dist = #(PlayerPos - vector3(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"]))
-                        if dist <= 1.5 then
-                            closestHouse = k
-                            inRange = true
-                            if CurrentCops >= Config.MinimumHouseRobberyPolice then
-                                if Config.Houses[k]["opened"] then
-                                    DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], Lang:t("info.henter"))
-                                    if IsControlJustPressed(0, 38) then
-                                        enterRobberyHouse(k)
-                                    end
-                                else
-                                    if not requiredItemsShowed then
-                                        requiredItemsShowed = true
-                                        TriggerEvent('inventory:client:requiredItems', requiredItems, true)
-                                    end
-                                end
+
+        if Config.UseClockHours then
+            if GetClockHours() < Config.MinimumTime or GetClockHours() > Config.MaximumTime then
+                QBCore.Functions.Notify(Lang:t("error.not_allowed_time"), "error", 3500)
+                return
+            end
+        end
+
+        if not inside then
+            for k, _ in pairs(Config.Houses) do
+                local dist = #(PlayerPos - vector3(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"]))
+                if dist <= 1.5 then
+                    closestHouse = k
+                    inRange = true
+                    if CurrentCops >= Config.PoliceOnDutyRequired then
+                        if Config.Houses[k]["opened"] then
+                            DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], Lang:t("info.henter"))
+                            if IsControlJustPressed(0, 38) then
+                                enterRobberyHouse(k)
+                            end
+                        else
+                            if not requiredItemsShowed then
+                                requiredItemsShowed = true
+                                TriggerEvent('inventory:client:requiredItems', requiredItems, true)
                             end
                         end
                     end
                 end
             end
-            if inside then Wait(1000) end
-            if not inRange then
-                if requiredItemsShowed then
-                    requiredItemsShowed = false
-                    TriggerEvent('inventory:client:requiredItems', requiredItems, false)
-                end
-                Wait(1000)
-            end
         end
-        Wait(5)
+        if inside then Wait(1000) end
+        if not inRange then
+            if requiredItemsShowed then
+                requiredItemsShowed = false
+                TriggerEvent('inventory:client:requiredItems', requiredItems, false)
+            end
+            Wait(1000)
+        end
+        Wait(1)
     end
 end)
 
