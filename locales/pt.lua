@@ -9,6 +9,14 @@ local Translations = {
     },
     success = {
         ["worked"] = "Funcionou!",
+    },
+    info = {
+        ["palert"] = "Tentativa de Roubo a Residência",
+        ["henter"] = "~g~E~w~ - Para entrar",
+        ["hleave"] = "~g~E~w~ - Para sair",
+        ["aint"] = "~g~E~w~ - ",
+        ["hsearch"] = "Procurando..",
+        ["hsempty"] = "Vazio..",
     }
 }
 
