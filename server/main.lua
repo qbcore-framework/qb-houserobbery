@@ -3,11 +3,11 @@ local QBCore = exports['qb-core']:GetCoreObject()
 -- Functions
 
 local function ResetHouseStateTimer(house)
-    CreateThread(function ()
+    CreateThread(function()
         Wait(Config.TimeToCloseDoors * 60000)
-        Config.Houses[house]["opened"] = false
-        for _, v in pairs(Config.Houses[house]["furniture"]) do
-            v["searched"] = false
+        Config.Houses[house]['opened'] = false
+        for _, v in pairs(Config.Houses[house]['furniture']) do
+            v['searched'] = false
         end
         TriggerClientEvent('qb-houserobbery:client:ResetHouseState', -1, house)
     end)
@@ -22,18 +22,18 @@ end)
 -- Events
 
 RegisterNetEvent('qb-houserobbery:server:SetBusyState', function(cabin, house, bool)
-    Config.Houses[house]["furniture"][cabin]["isBusy"] = bool
+    Config.Houses[house]['furniture'][cabin]['isBusy'] = bool
     TriggerClientEvent('qb-houserobbery:client:SetBusyState', -1, cabin, house, bool)
 end)
 
 RegisterNetEvent('qb-houserobbery:server:enterHouse', function(house)
     local src = source
-    if not Config.Houses[house]["opened"] then
+    if not Config.Houses[house]['opened'] then
         ResetHouseStateTimer(house)
         TriggerClientEvent('qb-houserobbery:client:setHouseState', -1, house, true)
     end
     TriggerClientEvent('qb-houserobbery:client:enterHouse', src, house)
-    Config.Houses[house]["opened"] = true
+    Config.Houses[house]['opened'] = true
 end)
 
 RegisterNetEvent('qb-houserobbery:server:searchFurniture', function(cabin, house)
@@ -53,14 +53,14 @@ RegisterNetEvent('qb-houserobbery:server:searchFurniture', function(cabin, house
             else
                 player.Functions.AddItem(selectedItem.item, 1)
             end
-            TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
+            TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, 'add')
             Wait(500)
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.emty_box"), 'error')
+        TriggerClientEvent('QBCore:Notify', src, Lang:t('error.emty_box'), 'error')
     end
 
-    Config.Houses[house]["furniture"][cabin]["searched"] = true
+    Config.Houses[house]['furniture'][cabin]['searched'] = true
     TriggerClientEvent('qb-houserobbery:client:setCabinState', -1, house, cabin, true)
 end)
 
