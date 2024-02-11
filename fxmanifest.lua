@@ -1,7 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
-
-description 'QB-HouseRobbery'
+lua54 'yes'
+author 'Kakarot'
+description 'Allows players to rob houses for items to sell'
 version '1.2.0'
 
 shared_scripts {
@@ -18,5 +19,3 @@ dependencies {
     'qb-lockpick',
     'qb-skillbar'
 }
-
-lua54 'yes'
