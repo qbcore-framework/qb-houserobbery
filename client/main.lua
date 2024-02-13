@@ -78,7 +78,8 @@ local function alertCops()
     end
 end
 
-local function lockpickFinish(success)
+local function lockpickFinish()
+    local success = exports['qb-minigames']:Skillbar() -- calling like this will use default easy difficulty with 1234
     ClearPedTasks(PlayerPedId())
     if success then
         TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
@@ -209,7 +210,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                 loadAnimDict('mp_missheist_countrybank@nervous')
                 TaskPlayAnim(PlayerPedId(), 'mp_missheist_countrybank@nervous', 'nervous_idle', 8.0, 8.0, -1, 49, 0.0, false, false, false)
                 alertCops()
-                TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+                lockpickFinish()
                 if math.random(1, 100) <= 85 and not QBCore.Functions.IsWearingGloves() then
                     local pos = GetEntityCoords(PlayerPedId())
                     TriggerServerEvent('evidence:server:CreateFingerDrop', pos)
