@@ -3,7 +3,7 @@ House Robberies For QB-Core
 
 ## Dependencies
 - [qb-minigames](https://github.com/qbcore-framework/qb-minigames)
-- qb-skillbar: https://github.com/qbcore-framework/qb-skillbar
+- [qb-skillbar](https://github.com/qbcore-framework/qb-skillbar)
 
 # License
 
