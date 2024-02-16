@@ -78,28 +78,6 @@ local function alertCops()
     end
 end
 
-local function lockpickFinish(success)
-    ClearPedTasks(PlayerPedId())
-    if success then
-        TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
-        QBCore.Functions.Notify(Lang:t('success.worked'), 'success', 2500)
-    else
-        if usingAdvanced then
-            if math.random(1, 100) <= Config.ChanceToBreakAdvancedLockPick then
-                TriggerServerEvent('qb-houserobbery:server:removeAdvancedLockpick')
-                TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['advancedlockpick'], 'remove')
-            end
-        else
-            if math.random(1, 100) <= Config.ChanceToBreakLockPick then
-                TriggerServerEvent('qb-houserobbery:server:removeLockpick')
-                TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['lockpick'], 'remove')
-            end
-        end
-
-        QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
-    end
-end
-
 local function searchCabin(cabin)
     local ped = PlayerPedId()
     if math.random(1, 100) <= 85 and not QBCore.Functions.IsWearingGloves() then
@@ -113,43 +91,21 @@ local function searchCabin(cabin)
     TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, true)
     FreezeEntityPosition(ped, true)
     IsLockpicking = true
-
-    local succeededAttempts = 0
-    local neededAttempts = 4
-    local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
-    Skillbar.Start({
-        duration = math.random(4500, 7000),
-        pos = math.random(10, 30),
-        width = math.random(10, 20),
-    }, function()
-        if succeededAttempts + 1 >= neededAttempts then
-            ClearPedTasks(PlayerPedId())
-            TriggerServerEvent('qb-houserobbery:server:searchFurniture', cabin, currentHouse)
-            Config.Houses[currentHouse]['furniture'][cabin]['searched'] = true
-            TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
-            succeededAttempts = 0
-            FreezeEntityPosition(ped, false)
-            SetTimeout(500, function()
-                IsLockpicking = false
-            end)
-        else
-            Skillbar.Repeat({
-                duration = math.random(2000, 4000),
-                pos = math.random(10, 40),
-                width = math.random(10, 13),
-            })
-            succeededAttempts = succeededAttempts + 1
-        end
-    end, function()
+    local success = exports['qb-minigames']:Skillbar()
+    if success then
+        ClearPedTasks(PlayerPedId())
+        TriggerServerEvent('qb-houserobbery:server:searchFurniture', cabin, currentHouse)
+        Config.Houses[currentHouse]['furniture'][cabin]['searched'] = true
+        TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
+        FreezeEntityPosition(ped, false)
+        IsLockpicking = false
+    else
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
         QBCore.Functions.Notify(Lang:t('error.process_cancelled'), 'error', 3500)
-        succeededAttempts = 0
         FreezeEntityPosition(ped, false)
-        SetTimeout(500, function()
-            IsLockpicking = false
-        end)
-    end)
+        IsLockpicking = false
+    end
 end
 
 -- Events
@@ -209,10 +165,30 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                 loadAnimDict('mp_missheist_countrybank@nervous')
                 TaskPlayAnim(PlayerPedId(), 'mp_missheist_countrybank@nervous', 'nervous_idle', 8.0, 8.0, -1, 49, 0.0, false, false, false)
                 alertCops()
-                TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
-                if math.random(1, 100) <= 85 and not QBCore.Functions.IsWearingGloves() then
-                    local pos = GetEntityCoords(PlayerPedId())
-                    TriggerServerEvent('evidence:server:CreateFingerDrop', pos)
+                if usingAdvanced then
+                    local success = exports['qb-minigames']:Skillbar()
+                    if success then
+                        TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
+                        QBCore.Functions.Notify(Lang:t('success.worked'), 'success', 2500)
+                    else
+                        if math.random(1, 100) <= Config.ChanceToBreakAdvancedLockPick then
+                            TriggerServerEvent('qb-houserobbery:server:removeAdvancedLockpick')
+                            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['advancedlockpick'], 'remove')
+                        end
+                        QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
+                    end
+                else
+                    local success = exports['qb-minigames']:Skillbar('medium')
+                    if success then
+                        TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
+                        QBCore.Functions.Notify(Lang:t('success.worked'), 'success', 2500)
+                    else
+                        if math.random(1, 100) <= Config.ChanceToBreakLockPick then
+                            TriggerServerEvent('qb-houserobbery:server:removeLockpick')
+                            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['lockpick'], 'remove')
+                        end
+                        QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
+                    end
                 end
             else
                 QBCore.Functions.Notify(Lang:t('error.door_open'), 'error', 3500)
