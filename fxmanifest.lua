@@ -6,10 +6,10 @@ description 'Allows players to rob houses for items to sell'
 version '1.2.0'
 
 shared_scripts {
-    'config.lua',
     '@qb-core/shared/locale.lua',
     'locales/en.lua',
-    'locales/*.lua'
+    'locales/*.lua',
+    'config.lua'
 }
 
 client_script 'client/main.lua'

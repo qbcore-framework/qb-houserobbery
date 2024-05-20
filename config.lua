@@ -1,24 +1,18 @@
 Config = {}
 
-Config.PoliceOnDutyRequired = 2           -- amount of police required to be on duty to rob a house
-
+Config.PoliceOnDutyRequired = 0           -- amount of police required to be on duty to rob a house
 Config.LimitTime = true                   -- Use in-game clock hours to set the time the houses can be robbed
 Config.MinimumTime = 6                    -- only needed if LimitTime is true
 Config.MaximumTime = 22                   -- only needed if LimitTime is true
-
 Config.TimeToCloseDoors = 25              -- in minutes (only start counting after one person enters the house)
-
 Config.RequireScrewdriver = true          -- if true, you need a screwdriver to rob a house when not using advanced lockpick
-
 Config.ChanceToBreakLockPick = 30         -- chance in percent to break a normal lockpick if failed
 Config.ChanceToBreakAdvancedLockPick = 15 -- chance in percent to break a advanced lockpick if failed
-
 Config.ChanceToAlertPolice = 20           -- chance in percent to call the police if a house robbery is in progress
-
 Config.MinZOffset = 45
 
 Config.Rewards = {
-    [1] = { -- house tier
+    { -- house tier
         ['cabin'] = {
             { item = 'plastic',         min = 1, max = 3 },
             { item = 'diamond_ring',    min = 1, max = 1 },
@@ -58,4841 +52,1006 @@ Config.Rewards = {
 
 Config.Houses = {
     ['perfectdrive1'] = {
-        ['coords'] = {
-            ['x'] = -784.72,
-            ['y'] = 459.77,
-            ['z'] = 100.39,
-            ['h'] = 34.89
-        },
+        ['coords'] = vector4(-784.72, 459.77, 100.39, 34.89),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['perfectdrive2'] = {
-        ['coords'] = {
-            ['x'] = -762.21,
-            ['y'] = 430.96,
-            ['z'] = 100.2,
-            ['h'] = 198.27
-        },
+        ['coords'] = vector4(-762.21, 430.96, 100.2, 198.27),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['perfectdrive3'] = {
-        ['coords'] = {
-            ['x'] = -678.01,
-            ['y'] = 512.13,
-            ['z'] = 113.53,
-            ['h'] = 12.05
-        },
+        ['coords'] = vector4(-678.01, 512.13, 113.53, 12.05),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['perfectdrive4'] = {
-        ['coords'] = {
-            ['x'] = -640.92,
-            ['y'] = 520.61,
-            ['z'] = 109.88,
-            ['h'] = 9.94
-        },
+        ['coords'] = vector4(-640.92, 520.61, 109.88, 9.94),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['perfectdrive5'] = {
-        ['coords'] = {
-            ['x'] = -622.84,
-            ['y'] = 488.88,
-            ['z'] = 108.88,
-            ['h'] = 186.87
-        },
+        ['coords'] = vector4(-622.84, 488.88, 108.88, 186.87),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['perfectdrive6'] = {
-        ['coords'] = {
-            ['x'] = -595.55,
-            ['y'] = 530.28,
-            ['z'] = 107.75,
-            ['h'] = 13.0
-        },
+        ['coords'] = vector4(-595.55, 530.28, 107.75, 13.0),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['miltonroad1'] = {
-        ['coords'] = {
-            ['x'] = -536.67,
-            ['y'] = 477.36,
-            ['z'] = 103.19,
-            ['h'] = 235.55
-        },
+        ['coords'] = vector4(-536.67, 477.36, 103.19, 235.55),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['miltonroad2'] = {
-        ['coords'] = {
-            ['x'] = -526.64,
-            ['y'] = 516.97,
-            ['z'] = 112.94,
-            ['h'] = 226.17
-        },
+        ['coords'] = vector4(-526.64, 516.97, 112.94, 226.17),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['miltonroad3'] = {
-        ['coords'] = {
-            ['x'] = -554.48,
-            ['y'] = 541.26,
-            ['z'] = 110.71,
-            ['h'] = 338.6
-        },
+        ['coords'] = vector4(-554.48, 541.26, 110.71, 338.6),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['miltonroad4'] = {
-        ['coords'] = {
-            ['x'] = -500.82,
-            ['y'] = 551.92,
-            ['z'] = 120.6,
-            ['h'] = 159.51
-        },
+        ['coords'] = vector4(-500.82, 551.92, 120.6, 159.51),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['didiondrive1'] = {
-        ['coords'] = {
-            ['x'] = -418.09,
-            ['y'] = 568.99,
-            ['z'] = 125.06,
-            ['h'] = 333.59
-        },
+        ['coords'] = vector4(-418.09, 568.99, 125.06, 333.59),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['didiondrive2'] = {
-        ['coords'] = {
-            ['x'] = -411.06,
-            ['y'] = 529.18,
-            ['z'] = 122.18,
-            ['h'] = 167.27
-        },
+        ['coords'] = vector4(-411.06, 529.18, 122.18, 167.27),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['didiondrive3'] = {
-        ['coords'] = {
-            ['x'] = -348.73,
-            ['y'] = 514.95,
-            ['z'] = 120.65,
-            ['h'] = 316.96
-        },
+        ['coords'] = vector4(-348.73, 514.95, 120.65, 316.96),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['didiondrive4'] = {
-        ['coords'] = {
-            ['x'] = -355.93,
-            ['y'] = 469.76,
-            ['z'] = 112.65,
-            ['h'] = 104.28
-        },
+        ['coords'] = vector4(-355.93, 469.76, 112.65, 104.28),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['hillcrest1'] = {
-        ['coords'] = {
-            ['x'] = -908.66,
-            ['y'] = 693.67,
-            ['z'] = 151.44,
-            ['h'] = 104.28
-        },
+        ['coords'] = vector4(-908.66, 693.67, 151.44, 104.28),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['hillcrest2'] = {
-        ['coords'] = {
-            ['x'] = -951.28,
-            ['y'] = 682.65,
-            ['z'] = 153.58,
-            ['h'] = 177.85
-        },
+        ['coords'] = vector4(-951.28, 682.65, 153.58, 177.85),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['hillcrest3'] = {
-        ['coords'] = {
-            ['x'] = -1056.34,
-            ['y'] = 761.34,
-            ['z'] = 167.32,
-            ['h'] = 92.27
-        },
+        ['coords'] = vector4(-1056.34, 761.34, 167.32, 92.27),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['northsheldon1'] = {
-        ['coords'] = {
-            ['x'] = -1130.87,
-            ['y'] = 784.44,
-            ['z'] = 163.89,
-            ['h'] = 56.39
-        },
+        ['coords'] = vector4(-1130.87, 784.44, 163.89, 56.39),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['northsheldon2'] = {
-        ['coords'] = {
-            ['x'] = -1117.77,
-            ['y'] = 761.48,
-            ['z'] = 164.29,
-            ['h'] = 205.7
-        },
+        ['coords'] = vector4(-1117.77, 761.48, 164.29, 205.7),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['northsheldon3'] = {
-        ['coords'] = {
-            ['x'] = -1065.02,
-            ['y'] = 772.17,
-            ['z'] = 170.06,
-            ['h'] = 179.03
-        },
+        ['coords'] = vector4(-1065.02, 772.17, 170.06, 179.03),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['northsheldon4'] = {
-        ['coords'] = {
-            ['x'] = -962.7,
-            ['y'] = 814.09,
-            ['z'] = 177.57,
-            ['h'] = 0.44
-        },
+        ['coords'] = vector4(-962.7, 814.09, 177.57, 0.44),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['northsheldon5'] = {
-        ['coords'] = {
-            ['x'] = -867.34,
-            ['y'] = 785.0,
-            ['z'] = 191.93,
-            ['h'] = 182.44
-        },
+        ['coords'] = vector4(-867.34, 785.0, 191.93, 182.44),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['wildoats1'] = {
-        ['coords'] = {
-            ['x'] = 80.09,
-            ['y'] = 486.26,
-            ['z'] = 148.2,
-            ['h'] = 25.28
-        },
+        ['coords'] = vector4(80.09, 486.26, 148.2, 25.28),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['wildoats2'] = {
-        ['coords'] = {
-            ['x'] = 57.56,
-            ['y'] = 449.68,
-            ['z'] = 147.03,
-            ['h'] = 147.72
-        },
+        ['coords'] = vector4(57.56, 449.68, 147.03, 147.72),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['wildoats3'] = {
-        ['coords'] = {
-            ['x'] = -110.05,
-            ['y'] = 501.83,
-            ['z'] = 143.38,
-            ['h'] = 171.41
-        },
+        ['coords'] = vector4(-110.05, 501.83, 143.38, 171.41),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['jamestown1'] = {
-        ['coords'] = {
-            ['x'] = 385.18,
-            ['y'] = -1881.78,
-            ['z'] = 26.03,
-            ['h'] = 40.83
-        },
+        ['coords'] = vector4(385.18, -1881.78, 26.03, 40.83),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['jamestown2'] = {
-        ['coords'] = {
-            ['x'] = 412.47,
-            ['y'] = -1856.38,
-            ['z'] = 27.32,
-            ['h'] = 129.24
-        },
+        ['coords'] = vector4(412.47, -1856.38, 27.32, 129.24),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['jamestown3'] = {
-        ['coords'] = {
-            ['x'] = 427.21,
-            ['y'] = -1842.09,
-            ['z'] = 28.46,
-            ['h'] = 134.19
-        },
+        ['coords'] = vector4(427.21, -1842.09, 28.46, 134.19),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['roylow1'] = {
-        ['coords'] = {
-            ['x'] = 348.77,
-            ['y'] = -1820.95,
-            ['z'] = 28.89,
-            ['h'] = 135.8
-        },
+        ['coords'] = vector4(348.77, -1820.95, 28.89, 135.8),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['roylow2'] = {
-        ['coords'] = {
-            ['x'] = 329.42,
-            ['y'] = -1845.8,
-            ['z'] = 27.75,
-            ['h'] = 228.98
-        },
+        ['coords'] = vector4(329.42, -1845.8, 27.75, 228.98),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['roylow3'] = {
-        ['coords'] = {
-            ['x'] = 320.27,
-            ['y'] = -1854.06,
-            ['z'] = 27.51,
-            ['h'] = 225.09
-        },
+        ['coords'] = vector4(320.27, -1854.06, 27.51, 225.09),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['covenant1'] = {
-        ['coords'] = {
-            ['x'] = 192.29,
-            ['y'] = -1883.23,
-            ['z'] = 25.06,
-            ['h'] = 326.47
-        },
+        ['coords'] = vector4(192.29, -1883.23, 25.06, 326.47),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['covenant2'] = {
-        ['coords'] = {
-            ['x'] = 171.52,
-            ['y'] = -1871.53,
-            ['z'] = 24.4,
-            ['h'] = 245.19
-        },
+        ['coords'] = vector4(171.52, -1871.53, 24.4, 245.19),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['covenant3'] = {
-        ['coords'] = {
-            ['x'] = 128.24,
-            ['y'] = -1897.02,
-            ['z'] = 23.67,
-            ['h'] = 239.54
-        },
+        ['coords'] = vector4(128.24, -1897.02, 23.67, 239.54),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['covenant4'] = {
-        ['coords'] = {
-            ['x'] = 130.6,
-            ['y'] = -1853.22,
-            ['z'] = 25.23,
-            ['h'] = 329.64
-        },
+        ['coords'] = vector4(130.6, -1853.22, 25.23, 329.64),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['grove1'] = {
-        ['coords'] = {
-            ['x'] = 76.36,
-            ['y'] = -1948.1,
-            ['z'] = 21.17,
-            ['h'] = 44.97
-        },
+        ['coords'] = vector4(76.36, -1948.1, 21.17, 44.97),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['grove2'] = {
-        ['coords'] = {
-            ['x'] = 101.03,
-            ['y'] = -1912.16,
-            ['z'] = 21.41,
-            ['h'] = 331.84
-        },
+        ['coords'] = vector4(101.03, -1912.16, 21.41, 331.84),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['grove3'] = {
-        ['coords'] = {
-            ['x'] = 126.73,
-            ['y'] = -1930.12,
-            ['z'] = 21.38,
-            ['h'] = 210.98
-        },
+        ['coords'] = vector4(126.73, -1930.12, 21.38, 210.98),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['grove4'] = {
-        ['coords'] = {
-            ['x'] = 114.25,
-            ['y'] = -1961.19,
-            ['z'] = 21.33,
-            ['h'] = 198.18
-        },
+        ['coords'] = vector4(114.25, -1961.19, 21.33, 198.18),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity1'] = {
-        ['coords'] = {
-            ['x'] = -1076.33,
-            ['y'] = -1026.96,
-            ['z'] = 4.54,
-            ['h'] = 118.14
-        },
+        ['coords'] = vector4(-1076.33, -1026.96, 4.54, 118.14),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity2'] = {
-        ['coords'] = {
-            ['x'] = -1064.64,
-            ['y'] = -1057.42,
-            ['z'] = 6.41,
-            ['h'] = 115.35
-        },
+        ['coords'] = vector4(-1064.64, -1057.42, 6.41, 115.35),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity3'] = {
-        ['coords'] = {
-            ['x'] = -1063.77,
-            ['y'] = -1054.99,
-            ['z'] = 2.15,
-            ['h'] = 120.47
-        },
+        ['coords'] = vector4(-1063.77, -1054.99, 2.15, 120.47),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity4'] = {
-        ['coords'] = {
-            ['x'] = -1054.07,
-            ['y'] = -1000.2,
-            ['z'] = 6.41,
-            ['h'] = 296.69
-        },
+        ['coords'] = vector4(-1054.07, -1000.2, 6.41, 296.69),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity5'] = {
-        ['coords'] = {
-            ['x'] = -985.89,
-            ['y'] = -1121.74,
-            ['z'] = 4.55,
-            ['h'] = 297.63
-        },
+        ['coords'] = vector4(-985.89, -1121.74, 4.55, 297.63),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity6'] = {
-        ['coords'] = {
-            ['x'] = -1024.42,
-            ['y'] = -1140.0,
-            ['z'] = 2.75,
-            ['h'] = 213.84
-        },
+        ['coords'] = vector4(-1024.42, -1140.0, 2.75, 213.84),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity7'] = {
-        ['coords'] = {
-            ['x'] = -1074.13,
-            ['y'] = -1152.73,
-            ['z'] = 2.16,
-            ['h'] = 118.65
-        },
+        ['coords'] = vector4(-1074.13, -1152.73, 2.16, 118.65),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity8'] = {
-        ['coords'] = {
-            ['x'] = -1063.57,
-            ['y'] = -1160.35,
-            ['z'] = 2.75,
-            ['h'] = 210.36
-        },
+        ['coords'] = vector4(-1063.57, -1160.35, 2.75, 210.36),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity10'] = {
-        ['coords'] = {
-            ['x'] = -869.53,
-            ['y'] = -1103.41,
-            ['z'] = 6.45,
-            ['h'] = 29.2
-        },
+        ['coords'] = vector4(-869.53, -1103.41, 6.45, 29.2),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['prosperity11'] = {
-        ['coords'] = {
-            ['x'] = -869.07,
-            ['y'] = -1105.48,
-            ['z'] = 2.49,
-            ['h'] = 25.76
-        },
+        ['coords'] = vector4(-869.07, -1105.48, 2.49, 25.76),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['grapeseed1'] = {
-        ['coords'] = {
-            ['x'] = 1662.07,
-            ['y'] = 4776.19,
-            ['z'] = 42.07,
-            ['h'] = 92.92
-        },
+        ['coords'] = vector4(1662.07, 4776.19, 42.07, 92.92),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['grapeseed2'] = {
-        ['coords'] = {
-            ['x'] = 1664.04,
-            ['y'] = 4739.68,
-            ['z'] = 42.01,
-            ['h'] = 111.19
-        },
+        ['coords'] = vector4(1664.04, 4739.68, 42.01, 111.19),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paleto1'] = {
-        ['coords'] = {
-            ['x'] = -360.24,
-            ['y'] = 6260.61,
-            ['z'] = 31.9,
-            ['h'] = 136.27
-        },
+        ['coords'] = vector4(-360.24, 6260.61, 31.9, 136.27),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paleto2'] = {
-        ['coords'] = {
-            ['x'] = -366.57,
-            ['y'] = 6214.12,
-            ['z'] = 31.84,
-            ['h'] = 317.03
-        },
+        ['coords'] = vector4(-366.57, 6214.12, 31.84, 317.03),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paleto3'] = {
-        ['coords'] = {
-            ['x'] = -447.87,
-            ['y'] = 6260.25,
-            ['z'] = 30.05,
-            ['h'] = 338.35
-        },
+        ['coords'] = vector4(-447.87, 6260.25, 30.05, 338.35),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paleto4'] = {
-        ['coords'] = {
-            ['x'] = -245.99,
-            ['y'] = 6414.45,
-            ['z'] = 31.46,
-            ['h'] = 305.54
-        },
+        ['coords'] = vector4(-245.99, 6414.45, 31.46, 305.54),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paleto5'] = {
-        ['coords'] = {
-            ['x'] = -9.59,
-            ['y'] = 6654.23,
-            ['z'] = 31.7,
-            ['h'] = 31.66
-        },
+        ['coords'] = vector4(-9.59, 6654.23, 31.7, 31.66),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paleto6'] = {
-        ['coords'] = {
-            ['x'] = 25.1,
-            ['y'] = 6601.76,
-            ['z'] = 32.47,
-            ['h'] = 133.36
-        },
+        ['coords'] = vector4(25.1, 6601.76, 32.47, 133.36),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paletoHotels1'] = {
-        ['coords'] = {
-            ['x'] = -159.84,
-            ['y'] = 6432.65,
-            ['z'] = 31.93,
-            ['h'] = 310.91
-        },
+        ['coords'] = vector4(-159.84, 6432.65, 31.93, 310.91),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
     ['paletoHotels2'] = {
-        ['coords'] = {
-            ['x'] = -149.98,
-            ['y'] = 6416.07,
-            ['z'] = 31.92,
-            ['h'] = 225.27
-        },
+        ['coords'] = vector4(-149.98, 6416.07, 31.92, 225.27),
         ['opened'] = false,
         ['tier'] = 1,
         ['furniture'] = {
-            [1] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 4.15, ['y'] = 7.82, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Bedside Cabinet'
-            },
-            [2] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 5.95, ['y'] = 9.34, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Closet'
-            },
-            [3] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -1.03, ['y'] = 0.78, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [4] = {
-                ['type'] = 'chest',
-                ['coords'] = { ['x'] = 6.904, ['y'] = 3.987, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Chest'
-            },
-            [5] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 0.933, ['y'] = 1.254, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search Drawers'
-            },
-            [6] = {
-                ['type'] = 'cabin',
-                ['coords'] = { ['x'] = 6.19, ['y'] = 3.35, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Night Stand Cabinet'
-            },
-            [7] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -2.20, ['y'] = -0.30, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through the kitchen cabinets'
-            },
-            [8] = {
-                ['type'] = 'kitchen',
-                ['coords'] = { ['x'] = -4.35, ['y'] = -0.64, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [9] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.90, ['y'] = 4.42, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
-            [10] = {
-                ['type'] = 'livingroom',
-                ['coords'] = { ['x'] = -6.98, ['y'] = 7.91, ['z'] = 1.0 },
-                ['searched'] = false,
-                ['isBusy'] = false,
-                ['text'] = 'Search through shelves'
-            },
+            { ['type'] = 'cabin',      ['coords'] = vector3(4.15, 7.82, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_bcabinet') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(5.95, 9.34, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_closet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-1.03, 0.78, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'chest',      ['coords'] = vector3(6.904, 3.987, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(0.933, 1.254, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_chest') },
+            { ['type'] = 'cabin',      ['coords'] = vector3(6.19, 3.35, 1.0),   ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_cabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-2.20, -0.30, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_kcabinet') },
+            { ['type'] = 'kitchen',    ['coords'] = vector3(-4.35, -0.64, 1.0), ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.90, 4.42, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
+            { ['type'] = 'livingroom', ['coords'] = vector3(-6.98, 7.91, 1.0),  ['searched'] = false, ['isBusy'] = false, ['text'] = Lang:t('searching.search_shelves') },
         }
     },
 }

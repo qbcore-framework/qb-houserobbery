@@ -42,24 +42,23 @@ RegisterNetEvent('qb-houserobbery:server:searchFurniture', function(cabin, house
     local tier = Config.Houses[house].tier
     local availableItems = Config.Rewards[tier][Config.Houses[house].furniture[cabin].type]
     local itemCount = math.random(0, 3)
-
     if itemCount > 0 then
         for _ = 1, itemCount do
             local selectedItem = availableItems[math.random(1, #availableItems)]
             local itemInfo = QBCore.Shared.Items[selectedItem.item]
 
             if not itemInfo.unique then
-                player.Functions.AddItem(selectedItem.item, math.random(selectedItem.min, selectedItem.max))
+                local amount = math.random(selectedItem.min, selectedItem.max)
+                exports['qb-inventory']:AddItem(src, selectedItem.item, amount, false, false, 'qb-houserobbery:server:searchFurniture')
             else
-                player.Functions.AddItem(selectedItem.item, 1)
+                exports['qb-inventory']:AddItem(src, selectedItem.item, 1, false, false, 'qb-houserobbery:server:searchFurniture')
             end
-            TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, 'add')
+            TriggerClientEvent('qb-inventory:client:ItemBox', src, itemInfo, 'add')
             Wait(500)
         end
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t('error.emty_box'), 'error')
     end
-
     Config.Houses[house]['furniture'][cabin]['searched'] = true
     TriggerClientEvent('qb-houserobbery:client:setCabinState', -1, house, cabin, true)
 end)
@@ -67,13 +66,11 @@ end)
 RegisterNetEvent('qb-houserobbery:server:removeAdvancedLockpick', function()
     local Player = QBCore.Functions.GetPlayer(source)
     if not Player then return end
-
-    Player.Functions.RemoveItem('advancedlockpick', 1)
+    exports['qb-inventory']:RemoveItem(source, 'advancedlockpick', 1, false, 'qb-houserobbery:server:removeAdvancedLockpick')
 end)
 
 RegisterNetEvent('qb-houserobbery:server:removeLockpick', function()
     local Player = QBCore.Functions.GetPlayer(source)
     if not Player then return end
-
-    Player.Functions.RemoveItem('lockpick', 1)
+    exports['qb-inventory']:RemoveItem(source, 'lockpick', 1, false, 'qb-houserobbery:server:removeLockpick')
 end)

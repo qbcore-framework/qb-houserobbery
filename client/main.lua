@@ -45,7 +45,6 @@ local function enterRobberyHouse(house)
     local coords = { x = Config.Houses[house].coords.x, y = Config.Houses[house].coords.y, z = Config.Houses[house].coords.z - Config.MinZOffset }
     local data = exports['qb-interior']:CreateHouseRobbery(coords)
     if not data then return end
-
     houseObj = data[1]
     POIOffsets = data[2]
     inside = true
@@ -65,8 +64,8 @@ local function leaveRobberyHouse(house)
         TriggerEvent('qb-weathersync:client:EnableSync')
         Wait(250)
         DoScreenFadeIn(250)
-        SetEntityCoords(ped, Config.Houses[house]['coords']['x'], Config.Houses[house]['coords']['y'], Config.Houses[house]['coords']['z'] + 0.5)
-        SetEntityHeading(ped, Config.Houses[house]['coords']['h'])
+        SetEntityCoords(ped, Config.Houses[house]['coords']['x'], Config.Houses[house]['coords']['y'], Config.Houses[house]['coords']['z'] + 0.5, false, false, false, false)
+        SetEntityHeading(ped, Config.Houses[house]['coords']['w'])
         inside = false
         currentHouse = nil
     end)
@@ -84,10 +83,8 @@ local function searchCabin(cabin)
         local pos = GetEntityCoords(PlayerPedId())
         TriggerServerEvent('evidence:server:CreateFingerDrop', pos)
     end
-
     loadAnimDict('creatures@rottweiler@tricks@')
     TaskPlayAnim(PlayerPedId(), 'creatures@rottweiler@tricks@', 'petting_franklin', 8.0, 8.0, -1, 17, 0, false, false, false)
-
     TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, true)
     FreezeEntityPosition(ped, true)
     IsLockpicking = true
@@ -173,7 +170,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                     else
                         if math.random(1, 100) <= Config.ChanceToBreakAdvancedLockPick then
                             TriggerServerEvent('qb-houserobbery:server:removeAdvancedLockpick')
-                            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['advancedlockpick'], 'remove')
+                            TriggerEvent('qb-inventory:client:ItemBox', QBCore.Shared.Items['advancedlockpick'], 'remove')
                         end
                         QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
                     end
@@ -185,7 +182,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                     else
                         if math.random(1, 100) <= Config.ChanceToBreakLockPick then
                             TriggerServerEvent('qb-houserobbery:server:removeLockpick')
-                            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['lockpick'], 'remove')
+                            TriggerEvent('qb-inventory:client:ItemBox', QBCore.Shared.Items['lockpick'], 'remove')
                         end
                         QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
                     end
@@ -236,7 +233,7 @@ CreateThread(function()
                         else
                             if not requiredItemsShowed then
                                 requiredItemsShowed = true
-                                TriggerEvent('inventory:client:requiredItems', requiredItems, true)
+                                TriggerEvent('qb-inventory:client:requiredItems', requiredItems, true)
                             end
                         end
                     end
@@ -247,7 +244,7 @@ CreateThread(function()
         if not inRange then
             if requiredItemsShowed then
                 requiredItemsShowed = false
-                TriggerEvent('inventory:client:requiredItems', requiredItems, false)
+                TriggerEvent('qb-inventory:client:requiredItems', requiredItems, false)
             end
             Wait(1000)
         end
