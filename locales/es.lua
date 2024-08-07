@@ -6,26 +6,27 @@ local Translations = {
         ['process_cancelled'] = 'Proceso cancelado..',
         ['didnt_work'] = 'No funcionó..',
         ['emty_box'] = 'La caja esta vacía..',
+        ['not_allowed_time'] = "No puedes hacer eso a esta hora del día."
     },
     success = {
         ['worked'] = '¡Funcionó!',
     },
     info = {
-        ['palert'] = 'Attempted House Robbery',
-        ['henter'] = '~g~E~w~ - To Enter',
-        ['hleave'] = '~g~E~w~ - To leave house',
+        ['palert'] = 'Intento de robo de la casa',
+        ['henter'] = '~g~E~w~ - Para Entrar',
+        ['hleave'] = '~g~E~w~ - Para salir de casa',
         ['aint'] = '~g~E~w~ - ',
-        ['hsearch'] = 'Searching..',
-        ['hsempty'] = 'Empty..',
+        ['hsearch'] = 'Buscando..',
+        ['hsempty'] = 'Vacío..',
     },
     searching = {
-        ['search_bcabinet'] = 'Search Bedside Cabinet',
-        ['search_closet'] = 'Search Closet',
-        ['search_chest'] = 'Search Chest',
-        ['search_drawer'] = 'Search Drawers',
-        ['search_cabinet'] = 'Night Stand Cabinet',
-        ['search_kcabinet'] = 'Search through the kitchen cabinets',
-        ['search_shelves'] = 'Search through shelves',
+        ['search_bcabinet'] = 'Buscar en la mesita de noche',
+        ['search_closet'] = 'Buscar en el armario',
+        ['search_chest'] = 'Buscar en los cajones',
+        ['search_drawer'] = 'Buscar en los cajones',
+        ['search_cabinet'] = 'Buscar en los cajones',
+        ['search_kcabinet'] = 'Buscar en los cajones de la cocina',
+        ['search_shelves'] = 'Buscar en las  estanterías',
     }
 }
 
