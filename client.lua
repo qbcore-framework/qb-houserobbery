@@ -1,4 +1,5 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject({ 'Functions' })
+local sharedItems = exports['qb-core']:GetShared('Items')
 local inside = false
 local currentHouse = nil
 local closestHouse
@@ -170,7 +171,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                     else
                         if math.random(1, 100) <= Config.ChanceToBreakAdvancedLockPick then
                             TriggerServerEvent('qb-houserobbery:server:removeAdvancedLockpick')
-                            TriggerEvent('qb-inventory:client:ItemBox', QBCore.Shared.Items['advancedlockpick'], 'remove')
+                            TriggerEvent('qb-inventory:client:ItemBox', sharedItems['advancedlockpick'], 'remove')
                         end
                         QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
                     end
@@ -182,7 +183,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
                     else
                         if math.random(1, 100) <= Config.ChanceToBreakLockPick then
                             TriggerServerEvent('qb-houserobbery:server:removeLockpick')
-                            TriggerEvent('qb-inventory:client:ItemBox', QBCore.Shared.Items['lockpick'], 'remove')
+                            TriggerEvent('qb-inventory:client:ItemBox', sharedItems['lockpick'], 'remove')
                         end
                         QBCore.Functions.Notify(Lang:t('error.didnt_work'), 'error', 2500)
                     end
@@ -201,8 +202,8 @@ end)
 CreateThread(function()
     Wait(500)
     local requiredItems = {
-        [1] = { name = QBCore.Shared.Items['advancedlockpick']['name'], image = QBCore.Shared.Items['advancedlockpick']['image'] },
-        [2] = { name = QBCore.Shared.Items['screwdriverset']['name'], image = QBCore.Shared.Items['screwdriverset']['image'] },
+        [1] = { name = sharedItems['advancedlockpick']['name'], image = sharedItems['advancedlockpick']['image'] },
+        [2] = { name = sharedItems['screwdriverset']['name'], image = sharedItems['screwdriverset']['image'] },
     }
     local requiredItemsShowed = false
     while true do

@@ -1,4 +1,5 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject({ 'Functions' })
+local sharedItems = exports['qb-core']:GetShared('Items')
 
 -- Functions
 
@@ -38,14 +39,14 @@ end)
 
 RegisterNetEvent('qb-houserobbery:server:searchFurniture', function(cabin, house)
     local src = source
-    local player = QBCore.Functions.GetPlayer(src)
+    local player = exports['qb-core']:GetPlayer(src)
     local tier = Config.Houses[house].tier
     local availableItems = Config.Rewards[tier][Config.Houses[house].furniture[cabin].type]
     local itemCount = math.random(0, 3)
     if itemCount > 0 then
         for _ = 1, itemCount do
             local selectedItem = availableItems[math.random(1, #availableItems)]
-            local itemInfo = QBCore.Shared.Items[selectedItem.item]
+            local itemInfo = sharedItems[selectedItem.item]
 
             if not itemInfo.unique then
                 local amount = math.random(selectedItem.min, selectedItem.max)
@@ -64,13 +65,13 @@ RegisterNetEvent('qb-houserobbery:server:searchFurniture', function(cabin, house
 end)
 
 RegisterNetEvent('qb-houserobbery:server:removeAdvancedLockpick', function()
-    local Player = QBCore.Functions.GetPlayer(source)
+    local Player = exports['qb-core']:GetPlayer(source)
     if not Player then return end
     exports['qb-inventory']:RemoveItem(source, 'advancedlockpick', 1, false, 'qb-houserobbery:server:removeAdvancedLockpick')
 end)
 
 RegisterNetEvent('qb-houserobbery:server:removeLockpick', function()
-    local Player = QBCore.Functions.GetPlayer(source)
+    local Player = exports['qb-core']:GetPlayer(source)
     if not Player then return end
     exports['qb-inventory']:RemoveItem(source, 'lockpick', 1, false, 'qb-houserobbery:server:removeLockpick')
 end)
